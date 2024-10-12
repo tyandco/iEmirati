@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "iEmirati-DarkMode(logo only).png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "iEmirati-DarkMode(logo only) 1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "iEmirati-DarkMode(logo only) 2.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

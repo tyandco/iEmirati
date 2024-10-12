@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ADC1F48B2CBB03CB00534ACE /* iEmiratiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F48A2CBB03CB00534ACE /* iEmiratiApp.swift */; };
+		ADC1F48D2CBB03CB00534ACE /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F48C2CBB03CB00534ACE /* HomeScreen.swift */; };
+		ADC1F48F2CBB03CB00534ACE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F48E2CBB03CB00534ACE /* Item.swift */; };
+		ADC1F4912CBB03CC00534ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC1F4902CBB03CC00534ACE /* Assets.xcassets */; };
+		ADC1F4942CBB03CC00534ACE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC1F4932CBB03CC00534ACE /* Preview Assets.xcassets */; };
+		ADC1F49E2CBB03CC00534ACE /* iEmiratiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F49D2CBB03CC00534ACE /* iEmiratiTests.swift */; };
+		ADC1F4A82CBB03CC00534ACE /* iEmiratiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F4A72CBB03CC00534ACE /* iEmiratiUITests.swift */; };
+		ADC1F4AA2CBB03CC00534ACE /* iEmiratiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F4A92CBB03CC00534ACE /* iEmiratiUITestsLaunchTests.swift */; };
+		ADC1F4B72CBB03E900534ACE /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F4B62CBB03E900534ACE /* SplashScreenView.swift */; };
+		ADC1F4B82CBB03E900534ACE /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F4B62CBB03E900534ACE /* SplashScreenView.swift */; };
+		ADC1F4B92CBB03E900534ACE /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F4B62CBB03E900534ACE /* SplashScreenView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ADC1F49A2CBB03CC00534ACE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADC1F47F2CBB03CB00534ACE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADC1F4862CBB03CB00534ACE;
+			remoteInfo = iEmirati;
+		};
+		ADC1F4A42CBB03CC00534ACE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADC1F47F2CBB03CB00534ACE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADC1F4862CBB03CB00534ACE;
+			remoteInfo = iEmirati;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ADC1F4872CBB03CB00534ACE /* iEmirati.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iEmirati.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADC1F48A2CBB03CB00534ACE /* iEmiratiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iEmiratiApp.swift; sourceTree = "<group>"; };
+		ADC1F48C2CBB03CB00534ACE /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		ADC1F48E2CBB03CB00534ACE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		ADC1F4902CBB03CC00534ACE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ADC1F4932CBB03CC00534ACE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ADC1F4992CBB03CC00534ACE /* iEmiratiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iEmiratiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADC1F49D2CBB03CC00534ACE /* iEmiratiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iEmiratiTests.swift; sourceTree = "<group>"; };
+		ADC1F4A32CBB03CC00534ACE /* iEmiratiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iEmiratiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADC1F4A72CBB03CC00534ACE /* iEmiratiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iEmiratiUITests.swift; sourceTree = "<group>"; };
+		ADC1F4A92CBB03CC00534ACE /* iEmiratiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iEmiratiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ADC1F4B62CBB03E900534ACE /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ADC1F4842CBB03CB00534ACE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADC1F4962CBB03CC00534ACE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADC1F4A02CBB03CC00534ACE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ADC1F47E2CBB03CB00534ACE = {
+			isa = PBXGroup;
+			children = (
+				ADC1F4892CBB03CB00534ACE /* iEmirati */,
+				ADC1F49C2CBB03CC00534ACE /* iEmiratiTests */,
+				ADC1F4A62CBB03CC00534ACE /* iEmiratiUITests */,
+				ADC1F4882CBB03CB00534ACE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ADC1F4882CBB03CB00534ACE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ADC1F4872CBB03CB00534ACE /* iEmirati.app */,
+				ADC1F4992CBB03CC00534ACE /* iEmiratiTests.xctest */,
+				ADC1F4A32CBB03CC00534ACE /* iEmiratiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ADC1F4892CBB03CB00534ACE /* iEmirati */ = {
+			isa = PBXGroup;
+			children = (
+				ADC1F48A2CBB03CB00534ACE /* iEmiratiApp.swift */,
+				ADC1F48C2CBB03CB00534ACE /* HomeScreen.swift */,
+				ADC1F4B62CBB03E900534ACE /* SplashScreenView.swift */,
+				ADC1F48E2CBB03CB00534ACE /* Item.swift */,
+				ADC1F4902CBB03CC00534ACE /* Assets.xcassets */,
+				ADC1F4922CBB03CC00534ACE /* Preview Content */,
+			);
+			path = iEmirati;
+			sourceTree = "<group>";
+		};
+		ADC1F4922CBB03CC00534ACE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				ADC1F4932CBB03CC00534ACE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ADC1F49C2CBB03CC00534ACE /* iEmiratiTests */ = {
+			isa = PBXGroup;
+			children = (
+				ADC1F49D2CBB03CC00534ACE /* iEmiratiTests.swift */,
+			);
+			path = iEmiratiTests;
+			sourceTree = "<group>";
+		};
+		ADC1F4A62CBB03CC00534ACE /* iEmiratiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ADC1F4A72CBB03CC00534ACE /* iEmiratiUITests.swift */,
+				ADC1F4A92CBB03CC00534ACE /* iEmiratiUITestsLaunchTests.swift */,
+			);
+			path = iEmiratiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ADC1F4862CBB03CB00534ACE /* iEmirati */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADC1F4AD2CBB03CC00534ACE /* Build configuration list for PBXNativeTarget "iEmirati" */;
+			buildPhases = (
+				ADC1F4832CBB03CB00534ACE /* Sources */,
+				ADC1F4842CBB03CB00534ACE /* Frameworks */,
+				ADC1F4852CBB03CB00534ACE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iEmirati;
+			productName = iEmirati;
+			productReference = ADC1F4872CBB03CB00534ACE /* iEmirati.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ADC1F4982CBB03CC00534ACE /* iEmiratiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADC1F4B02CBB03CC00534ACE /* Build configuration list for PBXNativeTarget "iEmiratiTests" */;
+			buildPhases = (
+				ADC1F4952CBB03CC00534ACE /* Sources */,
+				ADC1F4962CBB03CC00534ACE /* Frameworks */,
+				ADC1F4972CBB03CC00534ACE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADC1F49B2CBB03CC00534ACE /* PBXTargetDependency */,
+			);
+			name = iEmiratiTests;
+			productName = iEmiratiTests;
+			productReference = ADC1F4992CBB03CC00534ACE /* iEmiratiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ADC1F4A22CBB03CC00534ACE /* iEmiratiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADC1F4B32CBB03CC00534ACE /* Build configuration list for PBXNativeTarget "iEmiratiUITests" */;
+			buildPhases = (
+				ADC1F49F2CBB03CC00534ACE /* Sources */,
+				ADC1F4A02CBB03CC00534ACE /* Frameworks */,
+				ADC1F4A12CBB03CC00534ACE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADC1F4A52CBB03CC00534ACE /* PBXTargetDependency */,
+			);
+			name = iEmiratiUITests;
+			productName = iEmiratiUITests;
+			productReference = ADC1F4A32CBB03CC00534ACE /* iEmiratiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ADC1F47F2CBB03CB00534ACE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					ADC1F4862CBB03CB00534ACE = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					ADC1F4982CBB03CC00534ACE = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = ADC1F4862CBB03CB00534ACE;
+					};
+					ADC1F4A22CBB03CC00534ACE = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = ADC1F4862CBB03CB00534ACE;
+					};
+				};
+			};
+			buildConfigurationList = ADC1F4822CBB03CB00534ACE /* Build configuration list for PBXProject "iEmirati" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ADC1F47E2CBB03CB00534ACE;
+			productRefGroup = ADC1F4882CBB03CB00534ACE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ADC1F4862CBB03CB00534ACE /* iEmirati */,
+				ADC1F4982CBB03CC00534ACE /* iEmiratiTests */,
+				ADC1F4A22CBB03CC00534ACE /* iEmiratiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ADC1F4852CBB03CB00534ACE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADC1F4942CBB03CC00534ACE /* Preview Assets.xcassets in Resources */,
+				ADC1F4912CBB03CC00534ACE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADC1F4972CBB03CC00534ACE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADC1F4A12CBB03CC00534ACE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ADC1F4832CBB03CB00534ACE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADC1F48D2CBB03CB00534ACE /* HomeScreen.swift in Sources */,
+				ADC1F48F2CBB03CB00534ACE /* Item.swift in Sources */,
+				ADC1F48B2CBB03CB00534ACE /* iEmiratiApp.swift in Sources */,
+				ADC1F4B72CBB03E900534ACE /* SplashScreenView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADC1F4952CBB03CC00534ACE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADC1F49E2CBB03CC00534ACE /* iEmiratiTests.swift in Sources */,
+				ADC1F4B82CBB03E900534ACE /* SplashScreenView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADC1F49F2CBB03CC00534ACE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADC1F4AA2CBB03CC00534ACE /* iEmiratiUITestsLaunchTests.swift in Sources */,
+				ADC1F4A82CBB03CC00534ACE /* iEmiratiUITests.swift in Sources */,
+				ADC1F4B92CBB03E900534ACE /* SplashScreenView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ADC1F49B2CBB03CC00534ACE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADC1F4862CBB03CB00534ACE /* iEmirati */;
+			targetProxy = ADC1F49A2CBB03CC00534ACE /* PBXContainerItemProxy */;
+		};
+		ADC1F4A52CBB03CC00534ACE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADC1F4862CBB03CB00534ACE /* iEmirati */;
+			targetProxy = ADC1F4A42CBB03CC00534ACE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		ADC1F4AB2CBB03CC00534ACE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ADC1F4AC2CBB03CC00534ACE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ADC1F4AE2CBB03CC00534ACE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iEmirati/Preview Content\"";
+				DEVELOPMENT_TEAM = JTSKL98H72;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tyandco.iEmirati;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ADC1F4AF2CBB03CC00534ACE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iEmirati/Preview Content\"";
+				DEVELOPMENT_TEAM = JTSKL98H72;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tyandco.iEmirati;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ADC1F4B12CBB03CC00534ACE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JTSKL98H72;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tyandco.iEmiratiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iEmirati.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iEmirati";
+			};
+			name = Debug;
+		};
+		ADC1F4B22CBB03CC00534ACE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JTSKL98H72;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tyandco.iEmiratiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iEmirati.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iEmirati";
+			};
+			name = Release;
+		};
+		ADC1F4B42CBB03CC00534ACE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JTSKL98H72;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tyandco.iEmiratiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iEmirati;
+			};
+			name = Debug;
+		};
+		ADC1F4B52CBB03CC00534ACE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JTSKL98H72;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tyandco.iEmiratiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iEmirati;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ADC1F4822CBB03CB00534ACE /* Build configuration list for PBXProject "iEmirati" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADC1F4AB2CBB03CC00534ACE /* Debug */,
+				ADC1F4AC2CBB03CC00534ACE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADC1F4AD2CBB03CC00534ACE /* Build configuration list for PBXNativeTarget "iEmirati" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADC1F4AE2CBB03CC00534ACE /* Debug */,
+				ADC1F4AF2CBB03CC00534ACE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADC1F4B02CBB03CC00534ACE /* Build configuration list for PBXNativeTarget "iEmiratiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADC1F4B12CBB03CC00534ACE /* Debug */,
+				ADC1F4B22CBB03CC00534ACE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADC1F4B32CBB03CC00534ACE /* Build configuration list for PBXNativeTarget "iEmiratiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADC1F4B42CBB03CC00534ACE /* Debug */,
+				ADC1F4B52CBB03CC00534ACE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ADC1F47F2CBB03CB00534ACE /* Project object */;
+}
