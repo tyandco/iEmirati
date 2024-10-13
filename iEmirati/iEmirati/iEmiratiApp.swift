@@ -25,7 +25,7 @@ struct iEmiratiApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeScreen()
+            ContentView()
         }
         .modelContainer(sharedModelContainer)
     }
