@@ -1,6 +1,7 @@
 # iEmirati
 An app that resembles the heritage and culture of the UAE.
-![iEmirati-LightMode](https://github.com/user-attachments/assets/68004594-ce8d-40e9-9d4b-44d7b6df63cc "iEmirati Icon")
+
+<img src="https://github.com/user-attachments/assets/68004594-ce8d-40e9-9d4b-44d7b6df63cc" width="350" align="center">
 
 
 ## What is it?
