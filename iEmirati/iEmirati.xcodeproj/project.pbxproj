@@ -15,9 +15,7 @@
 		ADC1F49E2CBB03CC00534ACE /* iEmiratiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F49D2CBB03CC00534ACE /* iEmiratiTests.swift */; };
 		ADC1F4A82CBB03CC00534ACE /* iEmiratiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F4A72CBB03CC00534ACE /* iEmiratiUITests.swift */; };
 		ADC1F4AA2CBB03CC00534ACE /* iEmiratiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F4A92CBB03CC00534ACE /* iEmiratiUITestsLaunchTests.swift */; };
-		ADC1F4B72CBB03E900534ACE /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F4B62CBB03E900534ACE /* SplashScreenView.swift */; };
-		ADC1F4B82CBB03E900534ACE /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F4B62CBB03E900534ACE /* SplashScreenView.swift */; };
-		ADC1F4B92CBB03E900534ACE /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F4B62CBB03E900534ACE /* SplashScreenView.swift */; };
+		ADEE79AD2CBBC77B00E3AB55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEE79AC2CBBC77400E3AB55 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +47,8 @@
 		ADC1F4A32CBB03CC00534ACE /* iEmiratiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iEmiratiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC1F4A72CBB03CC00534ACE /* iEmiratiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iEmiratiUITests.swift; sourceTree = "<group>"; };
 		ADC1F4A92CBB03CC00534ACE /* iEmiratiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iEmiratiUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		ADC1F4B62CBB03E900534ACE /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		ADEE79AB2CBBC19400E3AB55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		ADEE79AC2CBBC77400E3AB55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +99,10 @@
 		ADC1F4892CBB03CB00534ACE /* iEmirati */ = {
 			isa = PBXGroup;
 			children = (
+				ADEE79AB2CBBC19400E3AB55 /* Info.plist */,
 				ADC1F48A2CBB03CB00534ACE /* iEmiratiApp.swift */,
 				ADC1F48C2CBB03CB00534ACE /* HomeScreen.swift */,
-				ADC1F4B62CBB03E900534ACE /* SplashScreenView.swift */,
+				ADEE79AC2CBBC77400E3AB55 /* ContentView.swift */,
 				ADC1F48E2CBB03CB00534ACE /* Item.swift */,
 				ADC1F4902CBB03CC00534ACE /* Assets.xcassets */,
 				ADC1F4922CBB03CC00534ACE /* Preview Content */,
@@ -266,9 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADC1F48D2CBB03CB00534ACE /* HomeScreen.swift in Sources */,
+				ADEE79AD2CBBC77B00E3AB55 /* ContentView.swift in Sources */,
 				ADC1F48F2CBB03CB00534ACE /* Item.swift in Sources */,
 				ADC1F48B2CBB03CB00534ACE /* iEmiratiApp.swift in Sources */,
-				ADC1F4B72CBB03E900534ACE /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +277,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADC1F49E2CBB03CC00534ACE /* iEmiratiTests.swift in Sources */,
-				ADC1F4B82CBB03E900534ACE /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +286,6 @@
 			files = (
 				ADC1F4AA2CBB03CC00534ACE /* iEmiratiUITestsLaunchTests.swift in Sources */,
 				ADC1F4A82CBB03CC00534ACE /* iEmiratiUITests.swift in Sources */,
-				ADC1F4B92CBB03E900534ACE /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,17 +429,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iEmirati/Preview Content\"";
 				DEVELOPMENT_TEAM = JTSKL98H72;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iEmirati/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iEmirati;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,17 +465,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iEmirati/Preview Content\"";
 				DEVELOPMENT_TEAM = JTSKL98H72;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iEmirati/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iEmirati;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,7 +504,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JTSKL98H72;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tyandco.iEmiratiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -511,7 +523,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JTSKL98H72;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tyandco.iEmiratiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -529,6 +541,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JTSKL98H72;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tyandco.iEmiratiUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -546,6 +559,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JTSKL98H72;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tyandco.iEmiratiUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
