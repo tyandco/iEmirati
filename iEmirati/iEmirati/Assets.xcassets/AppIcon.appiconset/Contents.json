@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "iEmirati-LightModeSquare.png",
+      "filename" : "iEmirati New Light Mode.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -13,7 +13,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "iEmirati-DarkMode(logo only).png",
+      "filename" : "iEmirati New Dark Mode.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -25,7 +25,7 @@
           "value" : "tinted"
         }
       ],
-      "filename" : "iEmirati-TintedSquare.png",
+      "filename" : "iEmirati New Tinted.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"

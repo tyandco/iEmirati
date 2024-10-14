@@ -1,17 +1,50 @@
 {
   "images" : [
     {
-      "filename" : "iEmirati-DarkMode(logo only).png",
+      "filename" : "iEmirati Icon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "iEmirati-DarkMode(logo only) 1.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "iEmirati Dark Icon 1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "iEmirati Icon 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "iEmirati-DarkMode(logo only) 2.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "iEmirati Dark Icon.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "iEmirati Icon 2.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "iEmirati Dark Icon 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
