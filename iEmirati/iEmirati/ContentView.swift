@@ -9,7 +9,8 @@ import SwiftData
 
 struct ContentView: View {
     @State var isHomeRootScreen = false
-    @State var scaleAmount: CGFloat = 1
+    @State var scaleAmount: CGFloat = 0
+    @State var LogoOpacity: CGFloat = 0
     var body: some View {
         ZStack{
             Color("bg_color")
@@ -21,21 +22,24 @@ struct ContentView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .scaleEffect(scaleAmount)
+                .opacity(LogoOpacity)
                 .frame(width: .infinity, height: .infinity)
             }
         }
         .ignoresSafeArea()
         .onAppear{
             //starting tiny
-            withAnimation(.easeOut(duration: 1.2)){
+            withAnimation(.easeInOut(duration: 2)){
                 scaleAmount = 0.7
+                LogoOpacity = 1
             }
             //zoom in
-            withAnimation(.easeInOut(duration: 1).delay(1.2)){
-                scaleAmount = 80
+            withAnimation(.easeOut(duration: 0.4).delay(3)){
+                scaleAmount = 0
+                LogoOpacity = 0
             }
             //fade to homescreen
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4){
                 isHomeRootScreen = true
             }
         }
