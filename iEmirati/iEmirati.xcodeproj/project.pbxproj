@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ADB200292CBD483C00C33A61 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB200282CBD483C00C33A61 /* Launch Screen.storyboard */; };
 		ADC1F48B2CBB03CB00534ACE /* iEmiratiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F48A2CBB03CB00534ACE /* iEmiratiApp.swift */; };
 		ADC1F48D2CBB03CB00534ACE /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F48C2CBB03CB00534ACE /* HomeScreen.swift */; };
 		ADC1F48F2CBB03CB00534ACE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F48E2CBB03CB00534ACE /* Item.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ADB200282CBD483C00C33A61 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		ADC1F4872CBB03CB00534ACE /* iEmirati.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iEmirati.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC1F48A2CBB03CB00534ACE /* iEmiratiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iEmiratiApp.swift; sourceTree = "<group>"; };
 		ADC1F48C2CBB03CB00534ACE /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		ADC1F47E2CBB03CB00534ACE = {
 			isa = PBXGroup;
 			children = (
+				ADB200282CBD483C00C33A61 /* Launch Screen.storyboard */,
 				ADC1F4892CBB03CB00534ACE /* iEmirati */,
 				ADC1F49C2CBB03CC00534ACE /* iEmiratiTests */,
 				ADC1F4A62CBB03CC00534ACE /* iEmiratiUITests */,
@@ -239,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB200292CBD483C00C33A61 /* Launch Screen.storyboard in Resources */,
 				ADC1F4942CBB03CC00534ACE /* Preview Assets.xcassets in Resources */,
 				ADC1F4912CBB03CC00534ACE /* Assets.xcassets in Resources */,
 			);
@@ -454,7 +458,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tyandco.iEmirati;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tyandco.iEmirati;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -492,7 +496,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tyandco.iEmirati;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tyandco.iEmirati;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
