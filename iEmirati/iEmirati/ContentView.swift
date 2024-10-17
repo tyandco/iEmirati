@@ -14,7 +14,7 @@ struct ContentView: View {
     @State var LogoOpacity: CGFloat = 0
     var body: some View {
         ZStack{
-            Color("bg_color")
+            Color(.systemBackground)
             if isHomeRootScreen{
                 HomeScreen()
                     .modelContainer(for: Item.self, inMemory: true)
@@ -56,11 +56,9 @@ struct OnboardingView: View{
             PageView(title: "Welcome to iEmirati!", message: "Swipe to learn more >>>", imageName: "figure.wave",
                      showsDismissButton: false,
                      shouldShowOnboarding: $shouldShowOnboarding)
-                .background(Color.bg)
             PageView(title: "This app is in beta", message: "The app isn't complete yet, there's still more to work on!", imageName: "swift",
                      showsDismissButton: false,
                      shouldShowOnboarding: $shouldShowOnboarding)
-                .background(Color.bg)
             PageView(title: "iCloud Sync", message: "That feature is coming soon!", imageName: "icloud.circle",
                      showsDismissButton: true,
                      shouldShowOnboarding: $shouldShowOnboarding)
