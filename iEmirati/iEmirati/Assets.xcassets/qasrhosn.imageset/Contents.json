@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "qasr-al-hosn1-2048x1365-1 1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "qasr-al-hosn1-2048x1365-1 2.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "qasr-al-hosn1-2048x1365-1.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

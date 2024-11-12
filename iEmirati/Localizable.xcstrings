@@ -1,7 +1,538 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "About" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عن التطبيق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        }
+      }
+    },
+    "alhosn" : {
+      "comment" : "location",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qasr Al Hosn"
+          }
+        }
+      }
+    },
+    "alhosndesc" : {
+      "comment" : "location",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A classic. Still lives on to this day."
+          }
+        }
+      }
+    },
+    "Arqoub" : {
+      "comment" : "wordoftheday",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عرقوب"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عرقوب (Arqoub)"
+          }
+        }
+      }
+    },
+    "Arqoub Example" : {
+      "comment" : "wordoftheday",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يمكن استخدام الكلمة في جملة، مثل: “برقى عرقوب”، والذي يعني “سأصعد الهضبة”."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This word can be used in a phrase, for example, you could say “Barga Arqoub”, which means “I’m going/driving up the plateau.”"
+          }
+        }
+      }
+    },
+    "Arqoub Meaning" : {
+      "comment" : "wordoftheday",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "باللهجة الإماراتية، العرقوب هو هضبة رملية مرتفعة."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In Emirati terms, “Arqoub” is a high sand plateau."
+          }
+        }
+      }
+    },
+    "Built with Xcode" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تمت برمجة التطبيق مع Xcode"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Built with Xcode"
+          }
+        }
+      }
+    },
+    "Example: %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مثال: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Example: %@"
+          }
+        }
+      }
+    },
+    "Explore Locations" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اكتشف المواقع"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explore Locations"
+          }
+        }
+      }
+    },
+    "Get Started" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ابدأ الآن"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get Started"
+          }
+        }
+      }
+    },
+    "hervill" : {
+      "comment" : "location",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heritage Village"
+          }
+        }
+      }
+    },
+    "hervilldesc" : {
+      "comment" : "location",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "That one place you went with your school."
+          }
+        }
+      }
+    },
+    "Home" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الصفحة الرئيسية"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        }
+      }
+    },
+    "iCloud Sync" : {
+      "comment" : "onboarding",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تزامن iCloud"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Sync"
+          }
+        }
+      }
+    },
+    "iEmirati" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iEmirati"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iEmirati"
+          }
+        }
+      }
+    },
+    "jubailmang" : {
+      "comment" : "location",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jubail Mangrove Park"
+          }
+        }
+      }
+    },
+    "jubailmangdesc" : {
+      "comment" : "location",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Known for the huge amount of Mangrove trees grown here."
+          }
+        }
+      }
+    },
+    "Khor" : {
+      "comment" : "wordoftheday",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خور"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خور (Khor)"
+          }
+        }
+      }
+    },
+    "Khor Example" : {
+      "comment" : "wordoftheday",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“جدفت بالقارب في الخور”"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Yadaft bil qareb fil Khor”, which means “I rowed a boat in the bay.”"
+          }
+        }
+      }
+    },
+    "Khor Meaning" : {
+      "comment" : "wordoftheday",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هو مصب ماء في البحر، أو منخفض من الأرض بين مرتفعين، أو خليج."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It’s a place where water flows into the sea, a low-lying area between two elevations, or a bay."
+          }
+        }
+      }
+    },
+    "Meaning: %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المعنى: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meaning: %@"
+          }
+        }
+      }
+    },
+    "Open in  Maps" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "افتح في خرائط آبل"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open in  Maps"
+          }
+        }
+      }
+    },
+    "splash1" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حياك في تطبيق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to"
+          }
+        }
+      }
+    },
+    "splash2" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iEmirati!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iEmirati!"
+          }
+        }
+      }
+    },
+    "Swipe to learn more >>>" : {
+      "comment" : "onboarding",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اسحب لتتعلم المزيد >>>"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe to learn more >>>"
+          }
+        }
+      }
+    },
+    "Tap to learn the meaning!" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اضغط لتتعلم المعنى!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap to learn the meaning!"
+          }
+        }
+      }
+    },
+    "That feature is coming soon!" : {
+      "comment" : "onboarding",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذه الميزة قادمة قريباً!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "That feature is coming soon!"
+          }
+        }
+      }
+    },
+    "The app isn't complete yet, there's still more to work on!" : {
+      "comment" : "onboarding",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لم يتم تكملة التطبيق، لا يزال هناك الكثير للقيام به!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The app isn't complete yet, there's still more to work on!"
+          }
+        }
+      }
+    },
+    "There's still more to add! Check back soon!" : {
 
+    },
+    "This app is in beta" : {
+      "comment" : "onboarding",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا التطبيق تجريبي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This app is in beta"
+          }
+        }
+      }
+    },
+    "This is the base app.\n The interface is not ready yet." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا هو قاعدة التطبيق. الواجهة ليست جاهزة بعد. "
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is the base app. The interface is not ready yet."
+          }
+        }
+      }
+    },
+    "Version: %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الإصدار: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version: %@"
+          }
+        }
+      }
+    },
+    "Welcome to iEmirati!" : {
+      "comment" : "onboarding",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حياك في تطبيق iEmirati!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to iEmirati!"
+          }
+        }
+      }
+    },
+    "Word of the Day" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "كلمة اليوم"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Word of the Day"
+          }
+        }
+      }
+    }
   },
   "version" : "1.0"
 }
