@@ -52,9 +52,21 @@ struct ContentView: View {
                             Label("About", systemImage: "questionmark.circle.fill")
                         }
                 }
+                .opacity(logoOpacity)       // Apply opacity
+                .onAppear {
+                    // Delay for splash screen visibility
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // 1 second delay before animation
+                        withAnimation(.easeInOut(duration: 0.3)) {    // Slightly shrink the logo
+                            logoOpacity = 1     // Reduce opacity
+                        }
+                        
+                        }
+                    }
+                }
+                }
             }
         }
-    }
+
     
     struct SplashScreen: View {
         var body: some View {
@@ -153,4 +165,4 @@ struct ContentView: View {
         
         
     }
-}
+

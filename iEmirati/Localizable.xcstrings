@@ -21,6 +21,12 @@
       "comment" : "location",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قصر الحصن"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -33,6 +39,12 @@
       "comment" : "location",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "من أقدم قصور أبوظبي، لا يزال واقفاً حتى الآن."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -163,6 +175,12 @@
       "comment" : "location",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "القرية التراثية"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -175,6 +193,12 @@
       "comment" : "location",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مكان ذهبت اليه مع مدرستك."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -237,6 +261,12 @@
       "comment" : "location",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حديقة قرم الجبيل"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -249,6 +279,12 @@
       "comment" : "location",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مكان معروف بسبب الكميات الكبيرة من أشجار القرم."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -446,7 +482,14 @@
       }
     },
     "There's still more to add! Check back soon!" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا يزال هناك الكثير لإضافته! تحقق مرة أخرى قريباً!"
+          }
+        }
+      }
     },
     "This app is in beta" : {
       "comment" : "onboarding",
@@ -462,23 +505,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "This app is in beta"
-          }
-        }
-      }
-    },
-    "This is the base app.\n The interface is not ready yet." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "هذا هو قاعدة التطبيق. الواجهة ليست جاهزة بعد. "
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This is the base app. The interface is not ready yet."
           }
         }
       }

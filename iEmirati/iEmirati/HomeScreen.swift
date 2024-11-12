@@ -175,6 +175,7 @@ struct HomeScreen: View {
                     annotationItems: [location]) { loc in
                         MapMarker(coordinate: loc.coordinate, tint: .blue)
                 }
+                .mapStyle(.imagery)
                 .frame(height: 300)
                 .cornerRadius(15) // Apply rounded corners here
                 .padding(.horizontal) // Add padding around the map for spacing
