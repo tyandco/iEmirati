@@ -177,14 +177,14 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "القرية التراثية"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Heritage Village"
+            "value" : "Emirates Heritage Village"
           }
         }
       }
@@ -263,14 +263,14 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "حديقة قرم الجبيل"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Jubail Mangrove Park"
+            "value" : "Jubail Mangrove Walking Park "
           }
         }
       }
@@ -359,6 +359,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Meaning: %@"
+          }
+        }
+      }
+    },
+    "Open in Google Maps" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "افتح في خرائط جوجل"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open in Google Maps"
           }
         }
       }
@@ -487,6 +503,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "لا يزال هناك الكثير لإضافته! تحقق مرة أخرى قريباً!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There's still more to add! Check back soon!"
           }
         }
       }

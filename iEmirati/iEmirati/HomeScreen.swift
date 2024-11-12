@@ -33,14 +33,14 @@ func fetchWordOfTheDay() -> WordOfTheDay {
 
 struct HomeScreen: View {
     let locations = [
-        Location(name: "Heritage Village", imageName: "hervillage", description: "That one place you went before with your school.", coordinate: CLLocationCoordinate2D(latitude: 24.476696, longitude: 54.331250)),
-        Location(name: "Qasr Al Hosn", imageName: "qasrhosn", description: "A classic. Still lives on to this day.", coordinate: CLLocationCoordinate2D(latitude: 24.482405, longitude: 54.354719)),
-        Location(name: "Jubail Mangrove Park", imageName: "jubailmang", description: "Known for the huge amount of Mangrove trees grown here.", coordinate: CLLocationCoordinate2D(latitude: 24.544578, longitude: 54.488503))
+        Location(name: NSLocalizedString("hervill", comment: "location"), imageName: "hervillage", description: NSLocalizedString("hervilldesc", comment: "location"), coordinate: CLLocationCoordinate2D(latitude: 24.476696, longitude: 54.331250)),
+        Location(name: NSLocalizedString("alhosn", comment: "location"), imageName: "qasrhosn", description: NSLocalizedString("alhosndesc", comment: "location"), coordinate: CLLocationCoordinate2D(latitude: 24.482405, longitude: 54.354719)),
+        Location(name: NSLocalizedString("jubailmang", comment: "location"), imageName: "jubailmang", description: NSLocalizedString("jubailmangdesc", comment: "location"), coordinate: CLLocationCoordinate2D(latitude: 24.544578, longitude: 54.488503))
     ]
-//24.482405, 54.354719
+    //24.482405, 54.354719
     var wordOfTheDay: WordOfTheDay {
-            fetchWordOfTheDay()
-        }
+        fetchWordOfTheDay()
+    }
     
     var body: some View {
         NavigationStack {
@@ -150,7 +150,7 @@ struct HomeScreen: View {
     
     struct LocationDetailView: View {
         let location: Location
-        
+        @State private var showGoogleMapsAlert = false
         // Function to open location in Apple Maps
         func openInAppleMaps() {
             let coordinate = location.coordinate
@@ -161,85 +161,138 @@ struct HomeScreen: View {
             mapItem.name = location.name
             mapItem.openInMaps(launchOptions: [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)])
         }
-
-        var body: some View {
-            VStack(spacing: 20) {
-                Text(location.name)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                
-                // Map with rounded corners
-                Map(coordinateRegion: .constant(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))),
-                    interactionModes: .all,
-                    showsUserLocation: false,
-                    annotationItems: [location]) { loc in
-                        MapMarker(coordinate: loc.coordinate, tint: .blue)
-                }
-                .mapStyle(.imagery)
-                .frame(height: 300)
-                .cornerRadius(15) // Apply rounded corners here
-                .padding(.horizontal) // Add padding around the map for spacing
-                
-                Text(location.description)
-                    .font(.body)
-                    .padding()
-
-                // "Open in  Maps" button
-                Button(action: openInAppleMaps) {
-                    HStack {
-                        Image(systemName: "map")
-                            .font(.title)
-                        Text("Open in  Maps")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                    }
-                    .padding()
-                    .background(Color.accent)
-                    .foregroundColor(.white)
-                    .cornerRadius(20)
-                    .shadow(radius: 5)
-                }
-                .padding()
-
-                Spacer()
-            }
-            .padding()
-        }
-    }
-
-    struct WordOfTheDayView: View {
-        let word: WordOfTheDay
         
         var body: some View {
-            VStack {
-                Text(word.word)
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                    .padding()
+            ScrollView(.vertical, showsIndicators: true){
+                VStack(spacing: 20) {
+                    Text(location.name)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    
+                    // Map with rounded corners
+                    Map(coordinateRegion: .constant(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))),
+                        interactionModes: .all,
+                        showsUserLocation: false,
+                        annotationItems: [location]) { loc in
+                        MapMarker(coordinate: loc.coordinate, tint: .blue)
+                    }
+                        .mapStyle(.imagery)
+                        .frame(height: 300)
+                        .cornerRadius(15) // Apply rounded corners here
+                        .padding(.horizontal) // Add padding around the map for spacing
+                    
+                    Text(location.description)
+                        .font(.body)
+                        .padding()
+                    
+                    VStack(spacing: 10) {
+                        // Apple Maps Button
+                        Button(action: {
+                            let regionSpan = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
+                            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: location.coordinate))
+                            mapItem.name = location.name
+                            mapItem.openInMaps(launchOptions: [
+                                MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+                                MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+                            ])
+                        }) {
+                            HStack {
+                                Image("applemapsico")  // Use your Apple Maps icon name here
+                                    .resizable()
+                                    .frame(width: 30, height: 30)  // Set icon size here
+                                Text("Open in  Maps")
+                                    .font(.headline)
+                                    .foregroundColor(.aaplmpstxtcol)
+                            }
+                            .frame(maxWidth: .infinity) // Ensures the button takes up max width
+                            .padding()
+                            .background(Color.aaplmpsbckcol)
+                            .cornerRadius(20)
+                        }
+                        .padding(.horizontal)
+                        
+                        // Google Maps Button
+                        Button(action: {
+                            // Coordinates for the location
+                            let latitude = location.coordinate.latitude
+                            let longitude = location.coordinate.longitude
+                            let locationName = location.name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+                            
+                            // Google Maps URL Scheme for iOS app with name and coordinates
+                            let googleMapsURLString = "comgooglemaps://?q=\(locationName)&center=\(latitude),\(longitude)&zoom=14"
+                            
+                            // Google Maps Web URL (fallback for non-Google Maps users)
+                            let googleMapsWebURLString = "https://www.google.com/maps?q=\(locationName)&ll=\(latitude),\(longitude)&z=14"
+                            
+                            // Create URL objects
+                            if let googleMapsURL = URL(string: googleMapsURLString), let googleMapsWebURL = URL(string: googleMapsWebURLString) {
+                                
+                                // Check if the Google Maps app is installed
+                                if UIApplication.shared.canOpenURL(googleMapsURL) {
+                                    // Open the location directly in Google Maps app
+                                    UIApplication.shared.open(googleMapsURL)
+                                } else {
+                                    // If the app is not installed, fall back to the web version
+                                    UIApplication.shared.open(googleMapsWebURL)
+                                }
+                            }
+                        }) {
+                            HStack {
+                                Image("gmapsicon")
+                                    .resizable()
+                                    .frame(width: 21, height: 30)
+                                Text("Open in Google Maps")
+                                    .font(.headline)
+                                    .foregroundColor(.aaplmpstxtcol)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.aaplmpsbckcol)
+                            .cornerRadius(20)
+                        }
+                        .padding(.horizontal)
 
-                Text("Meaning: \(word.meaning)")
-                    .font(.headline)
-                    .fontWeight(.bold)
+                        Spacer()
+                    }
                     .padding()
-
-                Text("Example: \(word.example)")
-                    .font(.subheadline)
-                    .italic()
-                    .fontWeight(.black)
-                    .padding()
-
-                Spacer()
+                }
             }
-            .padding()
-            .navigationTitle("Word of the Day") // If you're using a NavigationView
+        }
+    }
+        struct WordOfTheDayView: View {
+            let word: WordOfTheDay
+            
+            var body: some View {
+                VStack {
+                    Text(word.word)
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                        .padding()
+                    
+                    Text("Meaning: \(word.meaning)")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .padding()
+                    
+                    Text("Example: \(word.example)")
+                        .font(.subheadline)
+                        .italic()
+                        .fontWeight(.black)
+                        .padding()
+                    
+                    Spacer()
+                }
+                .padding()
+                .navigationTitle("Word of the Day") // If you're using a NavigationView
+            }
+        }
+        
+        struct Location: Identifiable {
+            let id = UUID()
+            let name: String
+            let imageName: String
+            let description: String
+            let coordinate: CLLocationCoordinate2D
         }
     }
 
-    struct Location: Identifiable {
-        let id = UUID()
-        let name: String
-        let imageName: String
-        let description: String
-        let coordinate: CLLocationCoordinate2D
-    }
-}
