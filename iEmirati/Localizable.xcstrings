@@ -1,6 +1,15 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@ Quests" : {
+
+    },
+    "%lld%% Completed" : {
+
+    },
+    "%lld%% of Quests Completed" : {
+
+    },
     "About" : {
       "localizations" : {
         "ar" : {
@@ -348,6 +357,7 @@
       }
     },
     "Meaning: %@" : {
+      "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -380,6 +390,7 @@
       }
     },
     "Open in  Maps" : {
+      "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -546,6 +557,9 @@
           }
         }
       }
+    },
+    "View Quests" : {
+
     },
     "Welcome to iEmirati!" : {
       "comment" : "onboarding",

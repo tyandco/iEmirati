@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UIKit
 import MapKit
 import CoreLocation
 
@@ -31,84 +30,117 @@ func fetchWordOfTheDay() -> WordOfTheDay {
     return words[dayOfYear % words.count] // Cycle through the word list
 }
 
+// Struct to represent a quest
+struct Quest: Identifiable {
+    let id = UUID()
+    let name: String
+    let description: String
+}
+
+// Struct to represent a location with quests
+struct Location: Identifiable {
+    let id = UUID()
+    let name: String
+    let imageName: String
+    let description: String
+    let coordinate: CLLocationCoordinate2D
+    let quests: [Quest]
+}
+
 struct HomeScreen: View {
-    let locations = [
-        Location(name: NSLocalizedString("hervill", comment: "location"), imageName: "hervillage", description: NSLocalizedString("hervilldesc", comment: "location"), coordinate: CLLocationCoordinate2D(latitude: 24.476696, longitude: 54.331250)),
-        Location(name: NSLocalizedString("alhosn", comment: "location"), imageName: "qasrhosn", description: NSLocalizedString("alhosndesc", comment: "location"), coordinate: CLLocationCoordinate2D(latitude: 24.482405, longitude: 54.354719)),
-        Location(name: NSLocalizedString("jubailmang", comment: "location"), imageName: "jubailmang", description: NSLocalizedString("jubailmangdesc", comment: "location"), coordinate: CLLocationCoordinate2D(latitude: 24.544578, longitude: 54.488503))
+    let locations: [Location] = [
+        Location(name: NSLocalizedString("hervill", comment: "location"),
+                 imageName: "hervillage",
+                 description: NSLocalizedString("hervilldesc", comment: "location"),
+                 coordinate: CLLocationCoordinate2D(latitude: 24.476696, longitude: 54.331250),
+                 quests: [
+                    Quest(name: "Look around the area", description: ""),
+                    Quest(name: "Buy something as a memory", description: "")
+                 ]),
+        Location(name: NSLocalizedString("alhosn", comment: "location"),
+                 imageName: "qasrhosn",
+                 description: NSLocalizedString("alhosndesc", comment: "location"),
+                 coordinate: CLLocationCoordinate2D(latitude: 24.482405, longitude: 54.354719),
+                 quests: [
+                    Quest(name: "Castle Exploration", description: ""),
+                    Quest(name: "Check out the Historical Artifacts", description: "")
+                 ]),
+        Location(name: NSLocalizedString("jubailmang", comment: "location"),
+                 imageName: "jubailmang",
+                 description: NSLocalizedString("jubailmangdesc", comment: "location"),
+                 coordinate: CLLocationCoordinate2D(latitude: 24.544578, longitude: 54.488503),
+                 quests: [
+                    Quest(name: "Walk in the Mangrove Forests", description: ""),
+                    Quest(name: "Bird Watching", description: "")
+                 ])
     ]
-    //24.482405, 54.354719
+    
     var wordOfTheDay: WordOfTheDay {
         fetchWordOfTheDay()
     }
-    
+
     var body: some View {
         NavigationStack {
             ScrollView(.vertical, showsIndicators: true) {
-                
                 VStack {
                     // NavigationLink to WordOfTheDayView when tapping the CardView
                     NavigationLink(destination: WordOfTheDayView(word: wordOfTheDay)) {
                         CardView(word: wordOfTheDay)
                     }
                     .buttonStyle(PlainButtonStyle())
-                    
-                    VStack(alignment: .leading) {
-                        Text("Explore Locations")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .padding(.all)
-                        
-                        // Horizontal Scroll View
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 15) {
-                                ForEach(locations) { location in
-                                    NavigationLink(destination: LocationDetailView(location: location)) {
-                                        LocationCardView(location: location)
-                                    }
+
+                    Text("Explore Locations")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding(.all)
+
+                    // Horizontal Scroll View for Locations
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 15) {
+                            ForEach(locations) { location in
+                                NavigationLink(destination: LocationDetailView(location: location)) {
+                                    LocationCardView(location: location)
                                 }
                             }
-                            .padding(.all)
                         }
-                        .frame(height: 150)
-                        
-                        // Other content
-                        Text("There's still more to add! Check back soon!")
-                            .font(.largeTitle)
-                            .fontWeight(.heavy)
-                            .multilineTextAlignment(.center)
-                            .padding()
-                        
-                        // Additional content can be added here...
+                        .padding(.all)
                     }
-                    .navigationTitle("Home")
-                    .padding()
+                    .frame(height: 200)
+
+                    // Other content
+                    Text("There's still more to add! Check back soon!")
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                        .multilineTextAlignment(.center)
+                        .padding()
                 }
+                .navigationTitle("Home")
+                .padding()
             }
         }
     }
-    
+
     struct CardView: View {
         let word: WordOfTheDay
-        
+
         var body: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
                     .fill(Color.accent.opacity(0.1))
                     .frame(maxWidth: .infinity, maxHeight: 150)
                     .shadow(radius: 5)
-                
+
                 VStack(alignment: .leading) {
                     Text("Word of the Day")
                         .font(.headline)
                         .padding(.top, 10)
-                    
+
                     Text(word.word)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(.accent)
                         .padding(.top, 5)
-                    
+
                     Text("Tap to learn the meaning!")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
@@ -119,10 +151,12 @@ struct HomeScreen: View {
             .padding(.horizontal, 20)
         }
     }
-    
+
     struct LocationCardView: View {
         let location: Location
-        
+        @State private var progressValue: Double = 0.0 // Progress value for quests
+        @State private var progressPercentage: Int = 0 // Progress percentage for display
+
         var body: some View {
             VStack(alignment: .leading) {
                 Image(location.imageName)
@@ -131,44 +165,69 @@ struct HomeScreen: View {
                     .frame(width: 150, height: 100)
                     .clipped()
                     .cornerRadius(10)
-                
+
                 Text(location.name)
                     .font(.headline)
                     .padding(.top, 5)
-                
+
                 Text(location.description)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .lineLimit(2)
+
+                // Progress Bar and Percentage
+                VStack {
+                    ProgressView(value: progressValue, total: 1.0)
+                        .progressViewStyle(LinearProgressViewStyle())
+                        .frame(height: 10)
+
+                    Text("\(progressPercentage)% Completed")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .padding(.top, 2)
+                }
+                .padding(.top, 5)
+                .onAppear {
+                    loadProgress()
+                }
             }
             .frame(width: 150)
             .padding(.vertical)
             .background(Color(.systemBackground))
             .cornerRadius(15)
         }
+
+        // Load quest progress for this location
+        private func loadProgress() {
+            let key = "progress_\(location.id.uuidString)"
+            guard let savedData = UserDefaults.standard.data(forKey: key) else { return }
+
+            do {
+                let savedProgress = try JSONDecoder().decode([UUID: Bool].self, from: savedData)
+                let completedCount = savedProgress.values.filter { $0 }.count
+                let totalQuests = location.quests.count
+                progressValue = Double(completedCount) / Double(totalQuests)
+                progressPercentage = Int(progressValue * 100)
+            } catch {
+                print("Failed to load progress for \(location.name): \(error)")
+            }
+        }
     }
-    
+
     struct LocationDetailView: View {
         let location: Location
-        @State private var showGoogleMapsAlert = false
-        // Function to open location in Apple Maps
-        func openInAppleMaps() {
-            let coordinate = location.coordinate
-            let regionDistance: CLLocationDistance = 1000
-            let coordinates = CLLocationCoordinate2DMake(coordinate.latitude, coordinate.longitude)
-            let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
-            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinates))
-            mapItem.name = location.name
-            mapItem.openInMaps(launchOptions: [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)])
-        }
-        
+        @State private var progressValue: Double = 0.0 // Progress value for quests
+        @State private var progressPercentage: Int = 0 // Progress percentage for display
+
         var body: some View {
-            ScrollView(.vertical, showsIndicators: true){
+            ScrollView(.vertical, showsIndicators: true) {
                 VStack(spacing: 20) {
                     Text(location.name)
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                    
+                        .multilineTextAlignment(.center)
+                        .padding()
+
                     // Map with rounded corners
                     Map(coordinateRegion: .constant(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))),
                         interactionModes: .all,
@@ -176,123 +235,226 @@ struct HomeScreen: View {
                         annotationItems: [location]) { loc in
                         MapMarker(coordinate: loc.coordinate, tint: .blue)
                     }
-                        .mapStyle(.imagery)
-                        .frame(height: 300)
-                        .cornerRadius(15) // Apply rounded corners here
-                        .padding(.horizontal) // Add padding around the map for spacing
-                    
+                    .mapStyle(.imagery)
+                    .frame(height: 300)
+                    .cornerRadius(15)
+                    .padding(.horizontal)
+
                     Text(location.description)
                         .font(.body)
                         .padding()
-                    
-                    VStack(spacing: 10) {
-                        // Apple Maps Button
-                        Button(action: {
-                            let regionSpan = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
-                            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: location.coordinate))
-                            mapItem.name = location.name
-                            mapItem.openInMaps(launchOptions: [
-                                MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
-                                MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
-                            ])
-                        }) {
-                            HStack {
-                                Image("applemapsico")  // Use your Apple Maps icon name here
-                                    .resizable()
-                                    .frame(width: 30, height: 30)  // Set icon size here
-                                Text("Open in  Maps")
-                                    .font(.headline)
-                                    .foregroundColor(.aaplmpstxtcol)
-                            }
-                            .frame(maxWidth: .infinity) // Ensures the button takes up max width
-                            .padding()
-                            .background(Color.aaplmpsbckcol)
-                            .cornerRadius(20)
-                        }
-                        .padding(.horizontal)
-                        
-                        // Google Maps Button
-                        Button(action: {
-                            // Coordinates for the location
-                            let latitude = location.coordinate.latitude
-                            let longitude = location.coordinate.longitude
-                            let locationName = location.name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-                            
-                            // Google Maps URL Scheme for iOS app with name and coordinates
-                            let googleMapsURLString = "comgooglemaps://?q=\(locationName)&center=\(latitude),\(longitude)&zoom=14"
-                            
-                            // Google Maps Web URL (fallback for non-Google Maps users)
-                            let googleMapsWebURLString = "https://www.google.com/maps?q=\(locationName)&ll=\(latitude),\(longitude)&z=14"
-                            
-                            // Create URL objects
-                            if let googleMapsURL = URL(string: googleMapsURLString), let googleMapsWebURL = URL(string: googleMapsWebURLString) {
-                                
-                                // Check if the Google Maps app is installed
-                                if UIApplication.shared.canOpenURL(googleMapsURL) {
-                                    // Open the location directly in Google Maps app
-                                    UIApplication.shared.open(googleMapsURL)
-                                } else {
-                                    // If the app is not installed, fall back to the web version
-                                    UIApplication.shared.open(googleMapsWebURL)
-                                }
-                            }
-                        }) {
-                            HStack {
-                                Image("gmapsicon")
-                                    .resizable()
-                                    .frame(width: 21, height: 30)
-                                Text("Open in Google Maps")
-                                    .font(.headline)
-                                    .foregroundColor(.aaplmpstxtcol)
-                            }
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.aaplmpsbckcol)
-                            .cornerRadius(20)
-                        }
-                        .padding(.horizontal)
 
-                        Spacer()
+                    // Display the progress bar and percentage
+                    VStack {
+                        ProgressView(value: progressValue, total: 1.0)
+                            .progressViewStyle(LinearProgressViewStyle())
+                            .frame(height: 10)
+
+                        Text("\(progressPercentage)% of Quests Completed")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .padding(.top, 2)
                     }
-                    .padding()
+                    .padding(.top, 5)
+                    .onAppear {
+                        loadProgress()
+                    }
+
+                    // Navigate to QuestListPage
+                    NavigationLink(destination: QuestListPage(location: location)) {
+                        Text("View Quests")
+                            .font(.headline)
+                            .foregroundColor(.accent)
+                            .padding(.top)
+                    }
+
+                    // Open in Apple Maps Button with icon inside
+                    Button(action: {
+                        let regionDistance: CLLocationDistance = 1000
+                        let coordinates = location.coordinate
+                        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+                        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinates))
+                        mapItem.name = location.name
+                        mapItem.openInMaps(launchOptions: [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)])
+                    }) {
+                        HStack {
+                            Image("applemapsico")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                            Text("Open in  Maps")
+                                .font(.headline)
+                                .foregroundColor(.aaplmpstxtcol) // Keep original foreground color
+                        }
+                        .frame(width: 300)
+                        .padding()
+                        .background(Color.aaplmpsbckcol) // Keep original background color
+                        .cornerRadius(20) // Rounded corners
+                    }
+
+                    // Open in Google Maps Button with icon inside
+                    Button(action: {
+                        let coordinate = location.coordinate
+                        let locationName = location.name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "Location"
+                        if let url = URL(string: "comgooglemaps://?q=\(locationName)&center=\(coordinate.latitude),\(coordinate.longitude)"),
+                           UIApplication.shared.canOpenURL(url) {
+                            UIApplication.shared.open(url)
+                        } else if let url = URL(string: "https://www.google.com/maps?q=\(locationName)&center=\(coordinate.latitude),\(coordinate.longitude)") {
+                            UIApplication.shared.open(url)
+                        }
+                    }) {
+                        HStack {
+                            Image("gmapsicon")
+                                .resizable()
+                                .frame(width: 21, height: 30)
+                            Text("Open in Google Maps")
+                                .font(.headline)
+                                .foregroundColor(.aaplmpstxtcol) // Keep original foreground color
+                        }
+                        .frame(width: 300)
+                        .padding()
+                        .background(Color.aaplmpsbckcol) // Keep original background color
+                        .cornerRadius(20) // Rounded corners
+                    }
+
                 }
+                .padding()
+            }
+            .navigationTitle(location.name)
+            .navigationBarTitleDisplayMode(.inline)
+        }
+
+        // Load quest progress for this location
+        private func loadProgress() {
+            let key = "progress_\(location.id.uuidString)"
+            guard let savedData = UserDefaults.standard.data(forKey: key) else { return }
+
+            do {
+                let savedProgress = try JSONDecoder().decode([UUID: Bool].self, from: savedData)
+                let completedCount = savedProgress.values.filter { $0 }.count
+                let totalQuests = location.quests.count
+                progressValue = Double(completedCount) / Double(totalQuests)
+                progressPercentage = Int(progressValue * 100)
+            } catch {
+                print("Failed to load progress for \(location.name): \(error)")
             }
         }
     }
-        struct WordOfTheDayView: View {
-            let word: WordOfTheDay
-            
-            var body: some View {
+    struct QuestListPage: View {
+        let location: Location
+        @State private var progress: [UUID: Bool] = [:] // Store progress for quests
+
+        var body: some View {
+            VStack {
+                // Progress View
+                ProgressView(value: Double(progress.values.filter { $0 }.count), total: Double(location.quests.count))
+                    .progressViewStyle(LinearProgressViewStyle())
+                    .frame(height: 20)
+                    .padding()
+
+                Text("\(Int((Double(progress.values.filter { $0 }.count) / Double(location.quests.count)) * 100))% Completed")
+                    .padding()
+                    .font(.title2)
+                    .fontWeight(.bold)
+
+                // Quest List
+                List(location.quests) { quest in
+                    HStack {
+                        Button(action: {
+                            withAnimation {
+                                toggleProgress(for: quest.id)
+                            }
+                        }) {
+                            HStack {
+                                if progress[quest.id] == true {
+                                    Circle()
+                                        .fill(Color.accent)
+                                        .frame(width: 30, height: 30)
+                                        .overlay(
+                                            Image(systemName: "checkmark")
+                                                .foregroundColor(.white)
+                                                .font(.system(size: 18, weight: .bold))
+                                        )
+                                } else {
+                                    Circle()
+                                        .stroke(Color.accent, lineWidth: 2)
+                                        .frame(width: 30, height: 30)
+                                }
+
+                                Text(quest.name)
+                                    .font(.body)
+                                    .foregroundColor(.primary)
+                            }
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
+                }
+
+                Spacer()
+            }
+            .navigationTitle("\(location.name) Quests")
+            .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                loadProgress()
+            }
+        }
+
+        // MARK: - Progress Management
+        private func toggleProgress(for questID: UUID) {
+            progress[questID] = !(progress[questID] ?? false)
+            saveProgress()
+        }
+
+        private func saveProgress() {
+            do {
+                let progressData = try JSONEncoder().encode(progress)
+                let key = "progress_\(location.id.uuidString)"
+                UserDefaults.standard.set(progressData, forKey: key)
+            } catch {
+                print("Failed to save progress: \(error.localizedDescription)")
+            }
+        }
+
+        private func loadProgress() {
+            let key = "progress_\(location.id.uuidString)"
+            guard let savedData = UserDefaults.standard.data(forKey: key) else { return }
+
+            do {
+                let loadedProgress = try JSONDecoder().decode([UUID: Bool].self, from: savedData)
+                self.progress = loadedProgress
+            } catch {
+                print("Failed to load progress: \(error.localizedDescription)")
+            }
+        }
+    }
+    struct WordOfTheDayView: View {
+        let word: WordOfTheDay
+
+        var body: some View {
+            ScrollView {
                 VStack {
                     Text(word.word)
                         .font(.largeTitle)
-                        .fontWeight(.heavy)
-                        .padding()
-                    
-                    Text("Meaning: \(word.meaning)")
-                        .font(.headline)
                         .fontWeight(.bold)
+
+                    Text(word.meaning)
+                        .font(.title2)
                         .padding()
-                    
+
                     Text("Example: \(word.example)")
-                        .font(.subheadline)
-                        .italic()
-                        .fontWeight(.black)
+                        .font(.body)
                         .padding()
-                    
+
                     Spacer()
                 }
                 .padding()
-                .navigationTitle("Word of the Day") // If you're using a NavigationView
             }
-        }
-        
-        struct Location: Identifiable {
-            let id = UUID()
-            let name: String
-            let imageName: String
-            let description: String
-            let coordinate: CLLocationCoordinate2D
+            .navigationTitle("Word of the Day")
         }
     }
+}
 
+struct HomeScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeScreen()
+    }
+}
