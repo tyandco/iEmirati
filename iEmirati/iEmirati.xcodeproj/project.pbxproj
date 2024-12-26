@@ -10,6 +10,7 @@
 		AD49323C2CC0F543007A2DE2 /* AboutMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD49323B2CC0F543007A2DE2 /* AboutMenu.swift */; };
 		AD49324F2CC1440F007A2DE2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD49324E2CC1440F007A2DE2 /* Localizable.xcstrings */; };
 		AD4D012E2CE24B6B00F1948F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D012D2CE24B6B00F1948F /* DetailView.swift */; };
+		AD8170732CF1AF890026EFDB /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = AD8170722CF1AF890026EFDB /* SQLite */; };
 		ADAA6BEE2CCF63F800DB019C /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA6BED2CCF63F800DB019C /* LocationMapView.swift */; };
 		ADAA6BF02CCF641400DB019C /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA6BEF2CCF641400DB019C /* LocationDetailView.swift */; };
 		ADB200292CBD483C00C33A61 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB200282CBD483C00C33A61 /* Launch Screen.storyboard */; };
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD8170732CF1AF890026EFDB /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +240,9 @@
 				Base,
 			);
 			mainGroup = ADC1F47E2CBB03CB00534ACE;
+			packageReferences = (
+				AD8170712CF1AF890026EFDB /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = ADC1F4882CBB03CB00534ACE /* Products */;
 			projectDirPath = "";
@@ -469,7 +474,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
@@ -507,7 +512,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
@@ -639,6 +644,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD8170712CF1AF890026EFDB /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.15.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD8170722CF1AF890026EFDB /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD8170712CF1AF890026EFDB /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ADC1F47F2CBB03CB00534ACE /* Project object */;
 }

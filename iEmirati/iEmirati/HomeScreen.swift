@@ -8,7 +8,57 @@
 import SwiftUI
 import MapKit
 import CoreLocation
+import Combine
+import Foundation
+import SwiftData
 
+class ProgressManager: ObservableObject {
+    @AppStorage("questProgress") private var questProgressData: Data = Data()
+
+    static let shared = ProgressManager()
+
+    private init() {}
+
+    // Load the progress from AppStorage
+    func loadQuestProgress() -> [UUID: [UUID: Bool]] {
+        if let loadedProgress = try? JSONDecoder().decode([UUID: [UUID: Bool]].self, from: questProgressData) {
+            return loadedProgress
+        }
+        return [:]
+    }
+
+    // Save the progress to AppStorage
+    func saveQuestProgress(_ progress: [UUID: [UUID: Bool]]) {
+        if let encodedProgress = try? JSONEncoder().encode(progress) {
+            questProgressData = encodedProgress
+        }
+    }
+
+    // Get the progress for a specific location
+    func getProgress(for locationId: UUID) -> [UUID: Bool] {
+        let progress = loadQuestProgress()
+        return progress[locationId] ?? [:]
+    }
+
+    // Set the progress for a specific quest at a given location
+    func setProgress(for locationId: UUID, questId: UUID, completed: Bool) {
+        var progress = loadQuestProgress()
+
+        if progress[locationId] == nil {
+            progress[locationId] = [:]
+        }
+
+        progress[locationId]?[questId] = completed
+        saveQuestProgress(progress)
+    }
+
+    // Get the overall location progress (percentage of quests completed)
+    func getLocationProgress(for locationId: UUID, quests: [Quest]) -> Double {
+        let progress = loadQuestProgress()
+        let completedQuests = quests.filter { progress[locationId]?[$0.id] ?? false }
+        return Double(completedQuests.count) / Double(quests.count)
+    }
+}
 // Define the WordOfTheDay struct globally
 struct WordOfTheDay: Identifiable {
     let id = UUID()
@@ -45,6 +95,16 @@ struct Location: Identifiable {
     let description: String
     let coordinate: CLLocationCoordinate2D
     let quests: [Quest]
+    
+    // Store progress for quests
+    var progress: [UUID: Bool] = [:]
+
+    // Computed property to calculate percentage progress
+    var progressPercentage: Int {
+        let completedQuests = progress.values.filter { $0 }.count
+        let totalQuests = quests.count
+        return totalQuests > 0 ? Int((Double(completedQuests) / Double(totalQuests)) * 100) : 0
+    }
 }
 
 struct HomeScreen: View {
@@ -54,24 +114,24 @@ struct HomeScreen: View {
                  description: NSLocalizedString("hervilldesc", comment: "location"),
                  coordinate: CLLocationCoordinate2D(latitude: 24.476696, longitude: 54.331250),
                  quests: [
-                    Quest(name: "Look around the area", description: ""),
-                    Quest(name: "Buy something as a memory", description: "")
+                    Quest(name: NSLocalizedString("hvillquest1", comment: "quest"), description: ""),
+                    Quest(name: NSLocalizedString("hvillquest2", comment: "quest"), description: "")
                  ]),
         Location(name: NSLocalizedString("alhosn", comment: "location"),
                  imageName: "qasrhosn",
                  description: NSLocalizedString("alhosndesc", comment: "location"),
                  coordinate: CLLocationCoordinate2D(latitude: 24.482405, longitude: 54.354719),
                  quests: [
-                    Quest(name: "Castle Exploration", description: ""),
-                    Quest(name: "Check out the Historical Artifacts", description: "")
+                    Quest(name: NSLocalizedString("hosnquest1", comment: "quest"), description: ""),
+                    Quest(name: NSLocalizedString("hosnquest2", comment: "quest"), description: "")
                  ]),
         Location(name: NSLocalizedString("jubailmang", comment: "location"),
                  imageName: "jubailmang",
                  description: NSLocalizedString("jubailmangdesc", comment: "location"),
-                 coordinate: CLLocationCoordinate2D(latitude: 24.544578, longitude: 54.488503),
+                 coordinate: CLLocationCoordinate2D(latitude: 24.5109261, longitude: 54.3258003),
                  quests: [
-                    Quest(name: "Walk in the Mangrove Forests", description: ""),
-                    Quest(name: "Bird Watching", description: "")
+                    Quest(name: NSLocalizedString("jubailquest1", comment: "quest"), description: ""),
+                    Quest(name: NSLocalizedString("jubailquest2", comment: "quest"), description: "")
                  ])
     ]
     
@@ -93,7 +153,6 @@ struct HomeScreen: View {
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding(.all)
-
                     // Horizontal Scroll View for Locations
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 15) {
@@ -154,8 +213,8 @@ struct HomeScreen: View {
 
     struct LocationCardView: View {
         let location: Location
-        @State private var progressValue: Double = 0.0 // Progress value for quests
-        @State private var progressPercentage: Int = 0 // Progress percentage for display
+        @State private var progressValue: Double = 0.0
+        @State private var progressPercentage: Int = 0
 
         var body: some View {
             VStack(alignment: .leading) {
@@ -175,7 +234,6 @@ struct HomeScreen: View {
                     .foregroundColor(.secondary)
                     .lineLimit(2)
 
-                // Progress Bar and Percentage
                 VStack {
                     ProgressView(value: progressValue, total: 1.0)
                         .progressViewStyle(LinearProgressViewStyle())
@@ -188,47 +246,38 @@ struct HomeScreen: View {
                 }
                 .padding(.top, 5)
                 .onAppear {
-                    loadProgress()
+                    loadProgress() // Load progress when the view appears
                 }
             }
             .frame(width: 150)
             .padding(.vertical)
-            .background(Color(.systemBackground))
             .cornerRadius(15)
         }
 
-        // Load quest progress for this location
         private func loadProgress() {
-            let key = "progress_\(location.id.uuidString)"
-            guard let savedData = UserDefaults.standard.data(forKey: key) else { return }
-
-            do {
-                let savedProgress = try JSONDecoder().decode([UUID: Bool].self, from: savedData)
-                let completedCount = savedProgress.values.filter { $0 }.count
-                let totalQuests = location.quests.count
-                progressValue = Double(completedCount) / Double(totalQuests)
-                progressPercentage = Int(progressValue * 100)
-            } catch {
-                print("Failed to load progress for \(location.name): \(error)")
-            }
+            let completedCount = location.quests.filter { quest in
+                ProgressManager.shared.getProgress(for: location.id)[quest.id] ?? false
+            }.count
+            let totalQuests = location.quests.count
+            progressValue = Double(completedCount) / Double(totalQuests)
+            progressPercentage = Int(progressValue * 100)
         }
     }
-
     struct LocationDetailView: View {
         let location: Location
-        @State private var progressValue: Double = 0.0 // Progress value for quests
-        @State private var progressPercentage: Int = 0 // Progress percentage for display
+        @StateObject private var progressManager = ProgressManager.shared
 
         var body: some View {
             ScrollView(.vertical, showsIndicators: true) {
                 VStack(spacing: 20) {
+                    // Location Name
                     Text(location.name)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .padding()
 
-                    // Map with rounded corners
+                    // Map
                     Map(coordinateRegion: .constant(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))),
                         interactionModes: .all,
                         showsUserLocation: false,
@@ -240,82 +289,67 @@ struct HomeScreen: View {
                     .cornerRadius(15)
                     .padding(.horizontal)
 
+                    // Location Description
                     Text(location.description)
                         .font(.body)
                         .padding()
 
-                    // Display the progress bar and percentage
+                    // Show the overall location progress
                     VStack {
-                        ProgressView(value: progressValue, total: 1.0)
-                            .progressViewStyle(LinearProgressViewStyle())
-                            .frame(height: 10)
-
-                        Text("\(progressPercentage)% of Quests Completed")
+                        Text("\(Int(progressManager.getLocationProgress(for: location.id, quests: location.quests) * 100))% of Quests Completed")
                             .font(.caption)
                             .foregroundColor(.secondary)
                             .padding(.top, 2)
+                        ProgressView(value: progressManager.getLocationProgress(for: location.id, quests: location.quests), total: 1.0)
+                            .progressViewStyle(LinearProgressViewStyle())
+                            .frame(height: 10)
                     }
-                    .padding(.top, 5)
-                    .onAppear {
-                        loadProgress()
-                    }
+                    .padding(.top, 10)
 
-                    // Navigate to QuestListPage
-                    NavigationLink(destination: QuestListPage(location: location)) {
+                    // "View Quests" Button
+                    NavigationLink(destination: QuestListPage(location: location, progressManager: progressManager)) {
                         Text("View Quests")
                             .font(.headline)
-                            .foregroundColor(.accent)
-                            .padding(.top)
+                            .foregroundColor(.blue)
+                            .padding()
+                            .background(Capsule().stroke(Color.blue, lineWidth: 2))
                     }
 
                     // Open in Apple Maps Button with icon inside
                     Button(action: {
-                        let regionDistance: CLLocationDistance = 1000
-                        let coordinates = location.coordinate
-                        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
-                        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinates))
-                        mapItem.name = location.name
-                        mapItem.openInMaps(launchOptions: [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)])
+                        openInAppleMaps()
                     }) {
                         HStack {
-                            Image("applemapsico")
+                            Image("applemapsico") // Assuming you have an image named 'applemapsico' in your assets
                                 .resizable()
                                 .frame(width: 30, height: 30)
                             Text("Open in  Maps")
                                 .font(.headline)
-                                .foregroundColor(.aaplmpstxtcol) // Keep original foreground color
+                                .foregroundColor(.aaplmpstxtcol) // Ensure color is defined in your assets
                         }
                         .frame(width: 300)
                         .padding()
-                        .background(Color.aaplmpsbckcol) // Keep original background color
-                        .cornerRadius(20) // Rounded corners
+                        .background(Color.aaplmpsbckcol) // Ensure color is defined in your assets
+                        .cornerRadius(20)
                     }
 
                     // Open in Google Maps Button with icon inside
                     Button(action: {
-                        let coordinate = location.coordinate
-                        let locationName = location.name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "Location"
-                        if let url = URL(string: "comgooglemaps://?q=\(locationName)&center=\(coordinate.latitude),\(coordinate.longitude)"),
-                           UIApplication.shared.canOpenURL(url) {
-                            UIApplication.shared.open(url)
-                        } else if let url = URL(string: "https://www.google.com/maps?q=\(locationName)&center=\(coordinate.latitude),\(coordinate.longitude)") {
-                            UIApplication.shared.open(url)
-                        }
+                        openInGoogleMaps()
                     }) {
                         HStack {
-                            Image("gmapsicon")
+                            Image("gmapsicon") // Assuming you have an image named 'gmapsicon' in your assets
                                 .resizable()
                                 .frame(width: 21, height: 30)
                             Text("Open in Google Maps")
                                 .font(.headline)
-                                .foregroundColor(.aaplmpstxtcol) // Keep original foreground color
+                                .foregroundColor(.aaplmpstxtcol) // Ensure color is defined in your assets
                         }
                         .frame(width: 300)
                         .padding()
-                        .background(Color.aaplmpsbckcol) // Keep original background color
-                        .cornerRadius(20) // Rounded corners
+                        .background(Color.aaplmpsbckcol) // Ensure color is defined in your assets
+                        .cornerRadius(20)
                     }
-
                 }
                 .padding()
             }
@@ -323,63 +357,70 @@ struct HomeScreen: View {
             .navigationBarTitleDisplayMode(.inline)
         }
 
-        // Load quest progress for this location
-        private func loadProgress() {
-            let key = "progress_\(location.id.uuidString)"
-            guard let savedData = UserDefaults.standard.data(forKey: key) else { return }
+        // Function to open location in Apple Maps
+        private func openInAppleMaps() {
+            let regionDistance: CLLocationDistance = 1000
+            let coordinates = location.coordinate
+            let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinates))
+            mapItem.name = location.name
+            mapItem.openInMaps(launchOptions: [
+                MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+                MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+            ])
+        }
 
-            do {
-                let savedProgress = try JSONDecoder().decode([UUID: Bool].self, from: savedData)
-                let completedCount = savedProgress.values.filter { $0 }.count
-                let totalQuests = location.quests.count
-                progressValue = Double(completedCount) / Double(totalQuests)
-                progressPercentage = Int(progressValue * 100)
-            } catch {
-                print("Failed to load progress for \(location.name): \(error)")
+        // Function to open location in Google Maps
+        private func openInGoogleMaps() {
+            let coordinate = location.coordinate
+            let locationName = location.name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "Location"
+            if let url = URL(string: "comgooglemaps://?q=\(locationName)&center=\(coordinate.latitude),\(coordinate.longitude)"),
+               UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            } else if let url = URL(string: "https://www.google.com/maps?q=\(locationName)&center=\(coordinate.latitude),\(coordinate.longitude)") {
+                UIApplication.shared.open(url)
             }
         }
     }
     struct QuestListPage: View {
         let location: Location
-        @State private var progress: [UUID: Bool] = [:] // Store progress for quests
+        @ObservedObject var progressManager: ProgressManager
+
+        @State private var questProgress: [UUID: Bool] = [:]
+        @State private var animatedProgress: Double = 0.0
 
         var body: some View {
             VStack {
-                // Progress View
-                ProgressView(value: Double(progress.values.filter { $0 }.count), total: Double(location.quests.count))
+                ProgressView(value: animatedProgress, total: 1.0)
                     .progressViewStyle(LinearProgressViewStyle())
                     .frame(height: 20)
                     .padding()
+                    .onChange(of: getLocationProgress()) { newValue in
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            animatedProgress = newValue
+                        }
+                    }
 
-                Text("\(Int((Double(progress.values.filter { $0 }.count) / Double(location.quests.count)) * 100))% Completed")
+                Text("\(Int(animatedProgress * 100))% Completed")
                     .padding()
                     .font(.title2)
                     .fontWeight(.bold)
 
-                // Quest List
-                List(location.quests) { quest in
+                List(location.quests, id: \.id) { quest in
                     HStack {
                         Button(action: {
-                            withAnimation {
-                                toggleProgress(for: quest.id)
-                            }
+                            toggleQuestProgress(quest.id)
                         }) {
                             HStack {
-                                if progress[quest.id] == true {
-                                    Circle()
-                                        .fill(Color.accent)
+                                if questProgress[quest.id] == true {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .foregroundColor(.accentColor)
                                         .frame(width: 30, height: 30)
-                                        .overlay(
-                                            Image(systemName: "checkmark")
-                                                .foregroundColor(.white)
-                                                .font(.system(size: 18, weight: .bold))
-                                        )
                                 } else {
-                                    Circle()
-                                        .stroke(Color.accent, lineWidth: 2)
+                                    Image(systemName: "circle")
+                                        .foregroundColor(.accentColor)
                                         .frame(width: 30, height: 30)
                                 }
-
                                 Text(quest.name)
                                     .font(.body)
                                     .foregroundColor(.primary)
@@ -392,37 +433,35 @@ struct HomeScreen: View {
                 Spacer()
             }
             .navigationTitle("\(location.name) Quests")
-            .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 loadProgress()
+                animatedProgress = getLocationProgress()
             }
         }
 
-        // MARK: - Progress Management
-        private func toggleProgress(for questID: UUID) {
-            progress[questID] = !(progress[questID] ?? false)
-            saveProgress()
+        private func toggleQuestProgress(_ questID: UUID) {
+            let currentProgress = questProgress[questID] ?? false
+            questProgress[questID] = !currentProgress
+
+            progressManager.setProgress(for: location.id, questId: questID, completed: !currentProgress)
+
+            withAnimation(.easeInOut(duration: 0.5)) {
+                animatedProgress = getLocationProgress()
+            }
         }
 
-        private func saveProgress() {
-            do {
-                let progressData = try JSONEncoder().encode(progress)
-                let key = "progress_\(location.id.uuidString)"
-                UserDefaults.standard.set(progressData, forKey: key)
-            } catch {
-                print("Failed to save progress: \(error.localizedDescription)")
-            }
+        private func getLocationProgress() -> Double {
+            let completed = location.quests.filter { quest in
+                questProgress[quest.id] == true
+            }.count
+
+            return Double(completed) / Double(location.quests.count)
         }
 
         private func loadProgress() {
-            let key = "progress_\(location.id.uuidString)"
-            guard let savedData = UserDefaults.standard.data(forKey: key) else { return }
-
-            do {
-                let loadedProgress = try JSONDecoder().decode([UUID: Bool].self, from: savedData)
-                self.progress = loadedProgress
-            } catch {
-                print("Failed to load progress: \(error.localizedDescription)")
+            let progress = progressManager.getProgress(for: location.id)
+            for quest in location.quests {
+                questProgress[quest.id] = progress[quest.id] ?? false
             }
         }
     }

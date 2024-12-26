@@ -2,13 +2,34 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@ Quests" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ المهمات"
+          }
+        }
+      }
     },
     "%lld%% Completed" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld%% تم انهائه"
+          }
+        }
+      }
     },
     "%lld%% of Quests Completed" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld%%تم انهائه"
+          }
+        }
+      }
     },
     "About" : {
       "localizations" : {
@@ -132,6 +153,24 @@
         }
       }
     },
+    "eoe" : {
+      "comment" : "onboarding",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتم إعادة تعيين تقدم المهام في كل مرة تعيد فيها تشغيل التطبيق. هذا أمر طبيعي، وسيتم إصلاحه قريبًا إذا تم إصدار التطبيق على متجر التطبيقات."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The progress for the quests resets every time you relaunch. That’s natural, and will be fixed soon, if the app will be released on the App Store."
+          }
+        }
+      }
+    },
     "Example: %@" : {
       "localizations" : {
         "ar" : {
@@ -186,7 +225,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "القرية التراثية"
           }
         },
@@ -232,6 +271,78 @@
         }
       }
     },
+    "hosnquest1" : {
+      "comment" : "quest",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "استكشف القصر"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explore the castle"
+          }
+        }
+      }
+    },
+    "hosnquest2" : {
+      "comment" : "quest",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اكتشف القطع الأثرية التاريخية"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check out the historical artifacts"
+          }
+        }
+      }
+    },
+    "hvillquest1" : {
+      "comment" : "quest",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تجول في المنطقة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Look around the area"
+          }
+        }
+      }
+    },
+    "hvillquest2" : {
+      "comment" : "quest",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اشتر شيء"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buy something as a memory"
+          }
+        }
+      }
+    },
     "iCloud Sync" : {
       "comment" : "onboarding",
       "extractionState" : "manual",
@@ -272,14 +383,14 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "حديقة قرم الجبيل"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Jubail Mangrove Walking Park "
+            "value" : "Jubail Mangrove Park "
           }
         }
       }
@@ -298,6 +409,42 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Known for the huge amount of Mangrove trees grown here."
+          }
+        }
+      }
+    },
+    "jubailquest1" : {
+      "comment" : "quest",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "امش في غابات القرم"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Walk in the Mangrove Forests"
+          }
+        }
+      }
+    },
+    "jubailquest2" : {
+      "comment" : "quest",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شاهد الطيور"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bird Watching"
           }
         }
       }
@@ -369,6 +516,24 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Meaning: %@"
+          }
+        }
+      }
+    },
+    "onboardingremind" : {
+      "comment" : "onboarding",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تنبيه"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reminder"
           }
         }
       }
@@ -559,7 +724,14 @@
       }
     },
     "View Quests" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اعرض المهمات"
+          }
+        }
+      }
     },
     "Welcome to iEmirati!" : {
       "comment" : "onboarding",
