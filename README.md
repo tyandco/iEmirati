@@ -16,7 +16,7 @@ The features included are:
 - Word of the Day (teaches you an arabic word and when to use it)
 - Explore Locations (a list of locations to visit, with Apple Maps and Google Maps support!)
 - Quests (each location has quests)
-- Recipes (will be added soon enough)
+- Foods to try (it's in the name)
 
 ***QUESTS ARE UNABLE TO SAVE, WILL BE FIXED LATER SINCE THIS IS A PREVIEW***
 
