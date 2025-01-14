@@ -18,14 +18,14 @@ jobs:
       
 
       - run: pod repo update
-        working-directory: ios
+        working-directory: iEmirati
 
       - run: flutter build ios --release --no-codesign
 
       - run: mkdir Payload
         working-directory: build/ios/iphoneos
 
-      - run: mv Runner.app/ Payload
+      - run: mv iEmirati.app/ Payload
         working-directory: build/ios/iphoneos
 
       - name: Zip output
