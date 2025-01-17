@@ -11,7 +11,7 @@ iEmirati is actually a project made for the <a href="https://iosdesign.ae/">iOS 
 The concept app was first made in Keynote, then rebuilt in Xcode.
 
 ## Features
-iEmirati has a few features. that may be small, yet very interesting.
+iEmirati has a few features that may be small, yet very interesting.
 The features included are:
 - Word of the Day (teaches you an arabic word and when to use it)
 - Explore Locations (a list of locations to visit, with Apple Maps and Google Maps support!)
