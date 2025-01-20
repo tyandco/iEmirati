@@ -15,7 +15,7 @@ iEmirati has a few features that may be small, yet very interesting.
 The features included are:
 - Word of the Day (teaches you an arabic word and when to use it)
 - Explore Locations (a list of locations to visit, with Apple Maps and Google Maps support!)
-- Quests (each location has quests)
+- Quests (each location has quests) ***[WIP]***
 - Foods to try (it's in the name)
 
 ***QUESTS ARE UNABLE TO SAVE, WILL BE FIXED LATER SINCE THIS IS A PREVIEW***
