@@ -256,10 +256,26 @@
 
     },
     "Harees" : {
-      "comment" : "traditional food"
+      "comment" : "traditional food",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هريس"
+          }
+        }
+      }
     },
     "Harees Description" : {
-      "comment" : "traditional food"
+      "comment" : "traditional food",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This food is kinda like porridge, but it just hits different. Sure, the look and smell might be revolting to you, but who knows what it tastes like?"
+          }
+        }
+      }
     },
     "hervill" : {
       "comment" : "location",
@@ -549,16 +565,48 @@
       }
     },
     "Luqaimat" : {
-      "comment" : "traditional food"
+      "comment" : "traditional food",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لقيمات"
+          }
+        }
+      }
     },
     "Luqaimat Description" : {
-      "comment" : "traditional food"
+      "comment" : "traditional food",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It's everyone's favorite. It's usually coated in date molasses, or honey. Some people like to have it injected with cheese or Nutella."
+          }
+        }
+      }
     },
     "Machboos" : {
-      "comment" : "traditional food"
+      "comment" : "traditional food",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مجبوس"
+          }
+        }
+      }
     },
     "Machboos Description" : {
-      "comment" : "traditional food"
+      "comment" : "traditional food",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This tasty mixture of rice, cumin, salt, black pepper, turmeric, dried leaves and dried lime, always goes well with your choice of meat."
+          }
+        }
+      }
     },
     "May the best prototype win!" : {
 
@@ -633,6 +681,7 @@
 
     },
     "Open in  Maps" : {
+      "comment" : " ",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {

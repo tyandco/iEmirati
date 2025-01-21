@@ -277,9 +277,9 @@ struct AboutView: View {
                     .font(.headline)
                     .padding()
                 Text("May the best prototype win!")
-                    .font(.title2)
+                    .font(.title)
                     .fontWeight(.bold)
-                    .padding()
+                    .padding(.top)
             }
         }
    .navigationTitle("The Story")
