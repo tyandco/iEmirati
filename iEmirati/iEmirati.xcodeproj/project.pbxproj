@@ -11,9 +11,9 @@
 		AD49324F2CC1440F007A2DE2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD49324E2CC1440F007A2DE2 /* Localizable.xcstrings */; };
 		AD4D012E2CE24B6B00F1948F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D012D2CE24B6B00F1948F /* DetailView.swift */; };
 		AD8170732CF1AF890026EFDB /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = AD8170722CF1AF890026EFDB /* SQLite */; };
+		AD9646472D3F653600E2C926 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9646462D3F653600E2C926 /* Launch Screen.storyboard */; };
 		ADAA6BEE2CCF63F800DB019C /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA6BED2CCF63F800DB019C /* LocationMapView.swift */; };
 		ADAA6BF02CCF641400DB019C /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA6BEF2CCF641400DB019C /* LocationDetailView.swift */; };
-		ADB200292CBD483C00C33A61 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB200282CBD483C00C33A61 /* Launch Screen.storyboard */; };
 		ADC1F48B2CBB03CB00534ACE /* iEmiratiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F48A2CBB03CB00534ACE /* iEmiratiApp.swift */; };
 		ADC1F48D2CBB03CB00534ACE /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC1F48C2CBB03CB00534ACE /* HomeScreen.swift */; };
 		ADC1F4912CBB03CC00534ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC1F4902CBB03CC00534ACE /* Assets.xcassets */; };
@@ -45,9 +45,9 @@
 		AD49323B2CC0F543007A2DE2 /* AboutMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMenu.swift; sourceTree = "<group>"; };
 		AD49324E2CC1440F007A2DE2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		AD4D012D2CE24B6B00F1948F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		AD9646462D3F653600E2C926 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		ADAA6BED2CCF63F800DB019C /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
 		ADAA6BEF2CCF641400DB019C /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
-		ADB200282CBD483C00C33A61 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		ADC1F4872CBB03CB00534ACE /* iEmirati.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iEmirati.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC1F48A2CBB03CB00534ACE /* iEmiratiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iEmiratiApp.swift; sourceTree = "<group>"; };
 		ADC1F48C2CBB03CB00534ACE /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
@@ -92,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				AD49324E2CC1440F007A2DE2 /* Localizable.xcstrings */,
-				ADB200282CBD483C00C33A61 /* Launch Screen.storyboard */,
 				ADC1F4892CBB03CB00534ACE /* iEmirati */,
 				ADC1F49C2CBB03CC00534ACE /* iEmiratiTests */,
 				ADC1F4A62CBB03CC00534ACE /* iEmiratiUITests */,
@@ -120,6 +119,7 @@
 				ADAA6BEF2CCF641400DB019C /* LocationDetailView.swift */,
 				AD49323B2CC0F543007A2DE2 /* AboutMenu.swift */,
 				ADEE79AC2CBBC77400E3AB55 /* ContentView.swift */,
+				AD9646462D3F653600E2C926 /* Launch Screen.storyboard */,
 				AD4D012D2CE24B6B00F1948F /* DetailView.swift */,
 				ADC1F4902CBB03CC00534ACE /* Assets.xcassets */,
 				ADC1F4922CBB03CC00534ACE /* Preview Content */,
@@ -260,9 +260,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADB200292CBD483C00C33A61 /* Launch Screen.storyboard in Resources */,
 				ADC1F4942CBB03CC00534ACE /* Preview Assets.xcassets in Resources */,
 				AD49324F2CC1440F007A2DE2 /* Localizable.xcstrings in Resources */,
+				AD9646472D3F653600E2C926 /* Launch Screen.storyboard in Resources */,
 				ADC1F4912CBB03CC00534ACE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

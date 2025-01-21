@@ -16,11 +16,10 @@ struct AboutMenu: View {
                 .frame(width: 250, height: 250)
             Text("iEmirati")
                 .font(.system(size: 40, weight: .bold))
-                .padding()
+
             Text("Version: \(appVersion)")
                 .font(.system(size: 20, weight: .bold))
                 .foregroundColor(Color(.secondaryLabel))
-                .padding()
             Text("Built with Xcode")
                 .font(.system(size: 20, weight: .light))
                 .foregroundColor(Color(.secondaryLabel))
@@ -29,6 +28,13 @@ struct AboutMenu: View {
                     appVersion = getAppVersion()
                         
                 }
+            Form {
+                Section(header: Text("About")) {
+                    NavigationLink(destination: CreditsView()) {
+                        Text("Credits")
+                    }
+                }
+            }
         }
     }
 }
@@ -64,7 +70,47 @@ class SecondViewController: UIViewController {
                 secondSwiftUIView.didMove(toParent: self)
             }
     }
+    
+struct CreditsView: View {
+    var body: some View {
+        VStack {
+            Text("Credits")
+                .font(.largeTitle)
+                .padding(.top, 20)
 
+            Text("This app was developed by [Your Name].")
+                .font(.body)
+                .padding()
+                .multilineTextAlignment(.center)
+
+            Text("Special thanks to:")
+                .font(.headline)
+                .padding(.top, 10)
+            
+            VStack(alignment: .leading, spacing: 5) {
+                Text("• [Contributor or Team Name]")
+                Text("• [Another Contributor]")
+            }
+            .padding()
+            
+            Spacer()
+            
+            Button(action: {
+                // Dismiss CreditsView if it's presented modally
+                // Leave empty if CreditsView is part of a Navigation stack
+            }) {
+                Text("Done")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .padding()
+        }
+        .padding()
+    }
+}
 
 #Preview {
     AboutMenu()
