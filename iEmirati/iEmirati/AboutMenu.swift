@@ -47,12 +47,19 @@ struct AboutMenu: View {
             Form {
                 Section(header: Text("More")) {
                     NavigationLink(destination: CreditsView()) {
+                        Image(systemName: "list.bullet")
                         Text("Credits")
                     }
                     NavigationLink(destination: GitHubLink()) {
+                        Image("github")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20, height: 20)
+
                         Text("GitHub Repo")
                     }
                     NavigationLink(destination: AboutView()) {
+                        Image(systemName: "questionmark.circle")
                         Text("What's this..?")
                     }
                 }

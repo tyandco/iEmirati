@@ -264,11 +264,12 @@ struct HomeScreen: View {
                 Image(food.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 200, height: 200)
-                    .cornerRadius(10)
+                    .frame(height: 200)
+                    .cornerRadius(30)
                 
                 Text(food.name)
                     .font(.largeTitle)
+                    .fontWeight(.bold)
                     .padding(.top, 10)
                 
                 Text(food.description) // Display the description of the selected food
@@ -278,6 +279,7 @@ struct HomeScreen: View {
                 Spacer()
             }
             .padding()
+            .navigationTitle("Traditional Foods")
         }
     }
     struct LocationCardView: View {
