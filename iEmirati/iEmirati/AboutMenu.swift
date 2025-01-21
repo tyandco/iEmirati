@@ -266,6 +266,7 @@ struct AboutView: View {
                 Image("iosdesign")
                     .resizable()
                     .scaledToFit()
+                    .padding()
                 Text("This app was made for the iOS Design Challenge 2024-2025. The theme was \"UAE National Identity\".")
                     .font(.headline)
                     .padding()
