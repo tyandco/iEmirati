@@ -196,9 +196,6 @@ struct PageView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 250, height: 250) // Adjust size as needed
                 .padding()
-                .onAppear {
-                    updateButtonColor()
-                }
 
             Text(NSLocalizedString(title, comment: "onboarding"))
                 .font(.system(size: 42, weight: .heavy))
@@ -219,21 +216,10 @@ struct PageView: View {
                         .foregroundColor(.white)
                         .frame(width: 200, height: 50)
                         .fontWeight(.heavy)
-                        .background(buttonColor)
+                        .background(Color.accentColor)
                         .cornerRadius(8)
                 }
-                .padding()
-                .animation(.easeInOut(duration: 0.5), value: buttonColor) // Animate button color change
-            }
-        }
-    }
-
-    private func updateButtonColor() {
-        if let uiImage = UIImage(named: imageName),
-           let dominantUIColor = uiImage.dominantColor() {
-            let newColor = Color(dominantUIColor)
-            withAnimation(.easeInOut(duration: 0.5)) {
-                buttonColor = newColor // Smooth transition
+                .padding()// Animate button color change
             }
         }
     }

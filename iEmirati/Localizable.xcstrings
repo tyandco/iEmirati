@@ -834,7 +834,14 @@
 
     },
     "Traditional Foods" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الأكلات الشعبية"
+          }
+        }
+      }
     },
     "Version: %@" : {
       "localizations" : {
