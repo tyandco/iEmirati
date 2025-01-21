@@ -261,12 +261,23 @@ struct HomeScreen: View {
         
         var body: some View {
             VStack {
-                Image(food.imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 200)
-                    .cornerRadius(30)
-                
+                ZStack {
+                                // Blurred frame
+                                Image(food.imageName)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(height: 150)
+                                    .blur(radius: 10)
+
+                                    .opacity(1)
+                                
+                                // Main image
+                    Image(food.imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 150)
+                        .cornerRadius(30)
+                            }
                 Text(food.name)
                     .font(.largeTitle)
                     .fontWeight(.bold)
