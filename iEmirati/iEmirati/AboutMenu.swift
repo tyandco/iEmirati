@@ -36,7 +36,7 @@ struct AboutMenu: View {
             Text("Version: \(appVersion)")
                 .font(.system(size: 20, weight: .bold))
                 .foregroundColor(Color(.secondaryLabel))
-            Text("Built with Xcode")
+            Text("Built with love <3")
                 .font(.system(size: 20, weight: .light))
                 .foregroundColor(Color(.secondaryLabel))
                 .navigationTitle("About")

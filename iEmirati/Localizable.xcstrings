@@ -152,18 +152,12 @@
         }
       }
     },
-    "Built with Xcode" : {
+    "Built with love <3" : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تمت برمجة التطبيق مع Xcode"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Built with Xcode"
+            "value" : "صنع بحب 3>"
           }
         }
       }
