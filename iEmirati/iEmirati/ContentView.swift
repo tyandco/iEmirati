@@ -176,7 +176,7 @@ struct OnboardingView: View {
             Spacer()
         }
         .onAppear {
-            UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.accent // Active dot color
+            UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.systemBrown // Active dot color
             UIPageControl.appearance().pageIndicatorTintColor = UIColor.secondarySystemFill // Inactive dots color
         }
     }

@@ -62,11 +62,11 @@ struct LocationDetailView: View {
                                 .frame(width: 30, height: 30)
                             Text("Open in  Maps")
                                 .font(.headline)
-                                .foregroundColor(.aaplmpstxtcol) // Ensure color is defined in your assets
+ // Ensure color is defined in your assets
                         }
                         .frame(width: 300)
                         .padding()
-                        .background(Color.aaplmpsbckcol) // Ensure color is defined in your assets
+ // Ensure color is defined in your assets
                         .cornerRadius(20)
                     }
 
@@ -80,11 +80,11 @@ struct LocationDetailView: View {
                                 .frame(width: 21, height: 30)
                             Text("Open in Google Maps")
                                 .font(.headline)
-                                .foregroundColor(.aaplmpstxtcol) // Ensure color is defined in your assets
+ // Ensure color is defined in your assets
                         }
                         .frame(width: 300)
                         .padding()
-                        .background(Color.aaplmpsbckcol) // Ensure color is defined in your assets
+ // Ensure color is defined in your assets
                         .cornerRadius(20)
                     }
                 }

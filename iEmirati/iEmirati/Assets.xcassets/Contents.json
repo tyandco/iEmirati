@@ -4,6 +4,7 @@
     "version" : 1
   },
   "properties" : {
-    "compression-type" : "lossless"
+    "compression-type" : "lossless",
+    "generate-swift-asset-symbol-extensions" : "disabled"
   }
 }

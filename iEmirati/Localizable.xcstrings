@@ -83,6 +83,21 @@
         }
       }
     },
+    "also known as (insert username here) on GitHub" : {
+
+    },
+    "also known as MayDreemurr on GitHub" : {
+
+    },
+    "also known as S3eedMV1 on GitHub" : {
+
+    },
+    "also known as tyandco on GitHub" : {
+
+    },
+    "App Dev:" : {
+
+    },
     "Arqoub" : {
       "comment" : "wordoftheday",
       "extractionState" : "manual",
@@ -153,6 +168,12 @@
         }
       }
     },
+    "But instead of using these choices, I decided to just straight up program it, although it's my first time joining the challenge." : {
+
+    },
+    "Credits" : {
+
+    },
     "eoe" : {
       "comment" : "onboarding",
       "extractionState" : "manual",
@@ -203,6 +224,18 @@
         }
       }
     },
+    "for encouraging me to make this app" : {
+
+    },
+    "for helping me with their wonderful ideas" : {
+
+    },
+    "for supporting my work" : {
+
+    },
+    "for testing the app" : {
+
+    },
     "Get Started" : {
       "localizations" : {
         "ar" : {
@@ -218,6 +251,15 @@
           }
         }
       }
+    },
+    "GitHub Repo" : {
+
+    },
+    "Harees" : {
+      "comment" : "traditional food"
+    },
+    "Harees Description" : {
+      "comment" : "traditional food"
     },
     "hervill" : {
       "comment" : "location",
@@ -449,6 +491,9 @@
         }
       }
     },
+    "Khamis Matter" : {
+
+    },
     "Khor" : {
       "comment" : "wordoftheday",
       "extractionState" : "manual",
@@ -503,6 +548,24 @@
         }
       }
     },
+    "Luqaimat" : {
+      "comment" : "traditional food"
+    },
+    "Luqaimat Description" : {
+      "comment" : "traditional food"
+    },
+    "Machboos" : {
+      "comment" : "traditional food"
+    },
+    "Machboos Description" : {
+      "comment" : "traditional food"
+    },
+    "May the best prototype win!" : {
+
+    },
+    "Mayed AlKaabi" : {
+
+    },
     "Meaning: %@" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -519,6 +582,18 @@
           }
         }
       }
+    },
+    "More" : {
+
+    },
+    "My Family" : {
+
+    },
+    "My Friends" : {
+
+    },
+    "My Teachers" : {
+
     },
     "onboardingremind" : {
       "comment" : "onboarding",
@@ -554,6 +629,9 @@
         }
       }
     },
+    "Open in Safari" : {
+
+    },
     "Open in  Maps" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -570,6 +648,12 @@
           }
         }
       }
+    },
+    "Saeed Yasser" : {
+
+    },
+    "Special thanks to:" : {
+
     },
     "splash1" : {
       "localizations" : {
@@ -637,6 +721,9 @@
         }
       }
     },
+    "Teammates/Contributors:" : {
+
+    },
     "That feature is coming soon!" : {
       "comment" : "onboarding",
       "extractionState" : "manual",
@@ -673,21 +760,8 @@
         }
       }
     },
-    "There's still more to add! Check back soon!" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "لا يزال هناك الكثير لإضافته! تحقق مرة أخرى قريباً!"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "There's still more to add! Check back soon!"
-          }
-        }
-      }
+    "The Story" : {
+
     },
     "This app is in beta" : {
       "comment" : "onboarding",
@@ -706,6 +780,12 @@
           }
         }
       }
+    },
+    "This app was made for the iOS Design Challenge 2024-2025. The theme was \"UAE National Identity\"." : {
+
+    },
+    "Traditional Foods" : {
+
     },
     "Version: %@" : {
       "localizations" : {
@@ -733,6 +813,9 @@
         }
       }
     },
+    "We were told to create an app prototype via either Keynote or Figma, that captures the essence of UAE National Identity, focusing on Heritage and Values - the core of what it means to be Emirati and part of the UAE." : {
+
+    },
     "Welcome to iEmirati!" : {
       "comment" : "onboarding",
       "extractionState" : "manual",
@@ -751,6 +834,9 @@
         }
       }
     },
+    "What's this..?" : {
+
+    },
     "Word of the Day" : {
       "localizations" : {
         "ar" : {
@@ -766,6 +852,12 @@
           }
         }
       }
+    },
+    "You!" : {
+
+    },
+    "Yousef Alkhemeiri" : {
+
     }
   },
   "version" : "1.0"

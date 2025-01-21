@@ -66,11 +66,22 @@ struct WordOfTheDay: Identifiable {
     let meaning: String
     let example: String
 }
+struct FoodItem: Identifiable {
+    let id = UUID()
+    let name: String
+    let description: String
+    let imageName: String
+}
 
 // Sample word list
 let words: [WordOfTheDay] = [
     WordOfTheDay(word: NSLocalizedString("Arqoub", comment: "wordoftheday"), meaning: NSLocalizedString("Arqoub Meaning", comment: "wordoftheday"), example: NSLocalizedString("Arqoub Example", comment: "wordoftheday")),
     WordOfTheDay(word: NSLocalizedString("Khor", comment: "wordoftheday"), meaning: NSLocalizedString("Khor Meaning", comment: "wordoftheday"), example: NSLocalizedString("Khor Example", comment: "wordoftheday"))
+]
+let traditionalFoods: [FoodItem] = [
+    FoodItem(name: NSLocalizedString("Machboos", comment: "traditional food"), description: NSLocalizedString("Machboos Description", comment: "traditional food"), imageName: "machboos"),
+    FoodItem(name: NSLocalizedString("Harees", comment: "traditional food"), description: NSLocalizedString("Harees Description", comment: "traditional food"), imageName: "harees"),
+    FoodItem(name: NSLocalizedString("Luqaimat", comment: "traditional food"), description: NSLocalizedString("Luqaimat Description", comment: "traditional food"), imageName: "luqaimat")
 ]
 
 // This function picks a word based on the date
@@ -134,7 +145,7 @@ struct HomeScreen: View {
                     Quest(name: NSLocalizedString("jubailquest2", comment: "quest"), description: "")
                  ])
     ]
-    
+    let foods: [FoodItem] = traditionalFoods
     var wordOfTheDay: WordOfTheDay {
         fetchWordOfTheDay()
     }
@@ -165,13 +176,22 @@ struct HomeScreen: View {
                         .padding(.all)
                     }
                     .frame(height: 200)
-
-                    // Other content
-                    Text("There's still more to add! Check back soon!")
-                        .font(.largeTitle)
-                        .fontWeight(.heavy)
-                        .multilineTextAlignment(.center)
-                        .padding()
+                    
+                    Text("Traditional Foods")
+                                            .font(.title2)
+                                            .fontWeight(.bold)
+                                            .padding(.all)
+                                        ScrollView(.horizontal, showsIndicators: false) {
+                                            HStack(spacing: 15) {
+                                                ForEach(foods) { food in
+                                                    NavigationLink(destination: FoodDetailView(food: food)){
+                                                        FoodCardView(food: food)
+                                                    }
+                                                }
+                                            }
+                                            .padding(.horizontal)
+                                        }
+                                        .frame(height: 200)
                 }
                 .navigationTitle("Home")
                 .padding()
@@ -185,7 +205,7 @@ struct HomeScreen: View {
         var body: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
-                    .fill(Color.accent.opacity(0.1))
+                    .fill(Color.accentColor.opacity(0.1))
                     .frame(maxWidth: .infinity, maxHeight: 150)
                     .shadow(radius: 5)
 
@@ -197,7 +217,7 @@ struct HomeScreen: View {
                     Text(word.word)
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                        .foregroundColor(.accent)
+                        .foregroundColor(.accentColor)
                         .padding(.top, 5)
 
                     Text("Tap to learn the meaning!")
@@ -210,7 +230,56 @@ struct HomeScreen: View {
             .padding(.horizontal, 20)
         }
     }
+    struct FoodCardView: View {
+        let food: FoodItem
 
+        var body: some View {
+            VStack(alignment: .leading) {
+                Image(food.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 150, height: 100)
+                    .clipped()
+                    .cornerRadius(10)
+
+                Text(food.name)
+                    .font(.headline)
+                    .padding(.top, 5)
+
+                Text(food.description)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .lineLimit(2)
+            }
+            .frame(width: 150)
+            .padding(.vertical)
+            .cornerRadius(15)
+        }
+    }
+    struct FoodDetailView: View {
+        let food: FoodItem
+        
+        var body: some View {
+            VStack {
+                Image(food.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 200, height: 200)
+                    .cornerRadius(10)
+                
+                Text(food.name)
+                    .font(.largeTitle)
+                    .padding(.top, 10)
+                
+                Text(food.description) // Display the description of the selected food
+                    .font(.body)
+                    .padding(.top, 10)
+                
+                Spacer()
+            }
+            .padding()
+        }
+    }
     struct LocationCardView: View {
         let location: Location
         @State private var progressValue: Double = 0.0
@@ -325,11 +394,11 @@ struct HomeScreen: View {
                                 .frame(width: 30, height: 30)
                             Text("Open in  Maps")
                                 .font(.headline)
-                                .foregroundColor(.aaplmpstxtcol) // Ensure color is defined in your assets
+                                .foregroundStyle(.primary)
+                                 // Ensure color is defined in your assets
                         }
                         .frame(width: 300)
                         .padding()
-                        .background(Color.aaplmpsbckcol) // Ensure color is defined in your assets
                         .cornerRadius(20)
                     }
 
@@ -343,11 +412,12 @@ struct HomeScreen: View {
                                 .frame(width: 21, height: 30)
                             Text("Open in Google Maps")
                                 .font(.headline)
-                                .foregroundColor(.aaplmpstxtcol) // Ensure color is defined in your assets
+                                .foregroundStyle(.primary)
+                            // Ensure color is defined in your assets
                         }
                         .frame(width: 300)
                         .padding()
-                        .background(Color.aaplmpsbckcol) // Ensure color is defined in your assets
+                   // Ensure color is defined in your assets
                         .cornerRadius(20)
                     }
                 }

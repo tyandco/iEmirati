@@ -7,6 +7,22 @@
 
 import SwiftUI
 import UIKit
+import WebKit
+
+struct WebView: UIViewRepresentable {
+    let url: URL
+
+    func makeUIView(context: Context) -> WKWebView {
+        let webView = WKWebView()
+        return webView
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        let request = URLRequest(url: url)
+        uiView.load(request)
+    }
+}
+
 struct AboutMenu: View {
     @State private var appVersion: String = ""
     var body: some View {
@@ -29,9 +45,15 @@ struct AboutMenu: View {
                         
                 }
             Form {
-                Section(header: Text("About")) {
+                Section(header: Text("More")) {
                     NavigationLink(destination: CreditsView()) {
                         Text("Credits")
+                    }
+                    NavigationLink(destination: GitHubLink()) {
+                        Text("GitHub Repo")
+                    }
+                    NavigationLink(destination: AboutView()) {
+                        Text("What's this..?")
                     }
                 }
             }
@@ -70,45 +92,197 @@ class SecondViewController: UIViewController {
                 secondSwiftUIView.didMove(toParent: self)
             }
     }
+struct GitHubLink: View {
+    let url = URL(string: "https://www.github.com/tyandco/iEmirati")!
+
+    var body: some View {
+        VStack {
+            WebView(url: url)
+
+            Button("Open in Safari") {
+                openInSafari(url: url)
+            }
+            .padding()
+            .foregroundColor(.white)
+            .background(Color.blue)
+            .cornerRadius(30)
+        }
+    }
+
+    private func openInSafari(url: URL) {
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+}
     
 struct CreditsView: View {
     var body: some View {
-        VStack {
-            Text("Credits")
-                .font(.largeTitle)
-                .padding(.top, 20)
-
-            Text("This app was developed by [Your Name].")
-                .font(.body)
+        ScrollView{
+            VStack {
+                Text("App Dev:")
+                    .font(.largeTitle)
+                    .padding(.top, 20)
+                HStack {
+                    //me
+                    Image("typfp")
+                        .resizable()
+                        .frame(width: 150, height: 150)
+                        .clipShape(Circle())
+                    VStack{
+                        Text("Yousef Alkhemeiri")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .padding()
+                        Text("also known as tyandco on GitHub")
+                            .foregroundStyle(.secondary)
+                            .font(.caption)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                    }
+                }
+                Text("Teammates/Contributors:")
+                    .font(.largeTitle)
+                    .padding(.top, 20)
+                VStack{
+                    HStack {
+                        //mayed
+                        VStack{
+                            Text("Mayed AlKaabi")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .padding()
+                            Text("also known as MayDreemurr on GitHub")
+                                .foregroundStyle(.secondary)
+                                .font(.caption)
+                                .multilineTextAlignment(.center)
+                                .padding()
+                        }
+                        Image("mayypfp")
+                            .resizable()
+                            .frame(width: 150, height: 150)
+                            .clipShape(Circle())
+                    }
+                    HStack {
+                        //saeed
+                        Image("saeedpfp")
+                            .resizable()
+                            .frame(width: 150, height: 150)
+                            .clipShape(Circle())
+                        VStack{
+                            Text("Saeed Yasser")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .padding()
+                            Text("also known as S3eedMV1 on GitHub")
+                                .foregroundStyle(.secondary)
+                                .multilineTextAlignment(.center)
+                                .font(.caption)
+                                .padding()
+                        }
+                    }
+                    HStack {
+                        //khamis
+                        VStack{
+                            Text("Khamis Matter")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .padding()
+                            Text("also known as (insert username here) on GitHub")
+                                .foregroundStyle(.secondary)
+                                .multilineTextAlignment(.center)
+                                .font(.caption)
+                                .padding()
+                        }
+                        Image("test")
+                            .resizable()
+                            .frame(width: 150, height: 150)
+                            .clipShape(Circle())
+                    }
+                }
+                
+                Text("Special thanks to:")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding(.top, 10)
+                
+                VStack(alignment: .center, spacing: 5) {
+                    Text("My Teachers")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .padding()
+                    
+                    Text("for encouraging me to make this app")
+                        .foregroundStyle(.secondary)
+                        .font(.caption)
+                        .padding()
+                    
+                    Text("My Friends")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .padding()
+                    
+                    Text("for helping me with their wonderful ideas")
+                        .foregroundStyle(.secondary)
+                        .font(.caption)
+                        .padding()
+                    
+                    Text("My Family")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .padding()
+                    
+                    Text("for supporting my work")
+                        .foregroundStyle(.secondary)
+                        .font(.caption)
+                        .padding()
+                    
+                    Text("You!")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .padding()
+                    
+                    Text("for testing the app")
+                        .foregroundStyle(.secondary)
+                        .font(.caption)
+                        .padding()
+                    Image("scribblethanks")
+                        .resizable()
+                        .scaledToFit()
+                }
                 .padding()
-                .multilineTextAlignment(.center)
-
-            Text("Special thanks to:")
-                .font(.headline)
-                .padding(.top, 10)
-            
-            VStack(alignment: .leading, spacing: 5) {
-                Text("• [Contributor or Team Name]")
-                Text("• [Another Contributor]")
-            }
-            .padding()
-            
-            Spacer()
-            
-            Button(action: {
-                // Dismiss CreditsView if it's presented modally
-                // Leave empty if CreditsView is part of a Navigation stack
-            }) {
-                Text("Done")
+                
+                Spacer()
                     .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
             }
-            .padding()
         }
         .padding()
+    }
+}
+struct AboutView: View {
+    var body: some View {
+   ScrollView {
+            VStack {
+                Image("iosdesign")
+                    .resizable()
+                    .scaledToFit()
+                Text("This app was made for the iOS Design Challenge 2024-2025. The theme was \"UAE National Identity\".")
+                    .font(.headline)
+                    .padding()
+                Text("We were told to create an app prototype via either Keynote or Figma, that captures the essence of UAE National Identity, focusing on Heritage and Values - the core of what it means to be Emirati and part of the UAE.")
+                    .font(.headline)
+                    .padding()
+                Text("But instead of using these choices, I decided to just straight up program it, although it's my first time joining the challenge.")
+                    .font(.headline)
+                    .padding()
+                Text("May the best prototype win!")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding()
+            }
+        }
+   .navigationTitle("The Story")
+   .padding()
     }
 }
 
