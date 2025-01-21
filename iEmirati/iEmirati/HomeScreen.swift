@@ -246,7 +246,7 @@ struct HomeScreen: View {
                     .font(.headline)
                     .padding(.top, 5)
 
-                Text(food.description)
+                Text("Tap to learn more!")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .lineLimit(2)

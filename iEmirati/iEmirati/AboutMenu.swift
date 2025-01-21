@@ -255,7 +255,9 @@ struct CreditsView: View {
                         .padding()
                     Image("scribblethanks")
                         .resizable()
-                        .scaledToFit()
+                        .frame(width:400, height: 400)
+                        .padding()
+                        
                 }
                 .padding()
                 
