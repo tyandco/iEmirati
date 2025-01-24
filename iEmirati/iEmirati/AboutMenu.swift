@@ -136,6 +136,7 @@ struct CreditsView: View {
                         .resizable()
                         .frame(width: 150, height: 150)
                         .clipShape(Circle())
+                        .padding()
                     VStack{
                         Text("Yousef Alkhemeiri")
                             .font(.headline)
@@ -147,10 +148,11 @@ struct CreditsView: View {
                             .multilineTextAlignment(.center)
                             .padding()
                     }
+                    .padding()
                 }
                 Text("Teammates/Contributors:")
                     .font(.largeTitle)
-                    .padding(.top, 20)
+                    .padding(.top)
                 VStack{
                     HStack {
                         //mayed
@@ -195,7 +197,7 @@ struct CreditsView: View {
                                 .font(.headline)
                                 .fontWeight(.bold)
                                 .padding()
-                            Text("also known as (insert username here) on GitHub")
+                            Text("he has no GitHub account :(")
                                 .foregroundStyle(.secondary)
                                 .multilineTextAlignment(.center)
                                 .font(.caption)
@@ -255,7 +257,7 @@ struct CreditsView: View {
                         .padding()
                     Image("scribblethanks")
                         .resizable()
-                        .frame(width:400, height: 400)
+                        .frame(width:300, height: 300)
                         .padding()
                         
                 }
@@ -278,21 +280,24 @@ struct AboutView: View {
                     .padding()
                 Text("This app was made for the iOS Design Challenge 2024-2025. The theme was \"UAE National Identity\".")
                     .font(.headline)
+                    .multilineTextAlignment(.center)
                     .padding()
                 Text("We were told to create an app prototype via either Keynote or Figma, that captures the essence of UAE National Identity, focusing on Heritage and Values - the core of what it means to be Emirati and part of the UAE.")
                     .font(.headline)
                     .padding()
+                    .multilineTextAlignment(.center)
                 Text("But instead of using these choices, I decided to just straight up program it, although it's my first time joining the challenge.")
                     .font(.headline)
+                    .multilineTextAlignment(.center)
                     .padding()
                 Text("May the best prototype win!")
                     .font(.title)
                     .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
                     .padding(.top)
             }
         }
    .navigationTitle("The Story")
-   .padding()
     }
 }
 
