@@ -203,10 +203,10 @@ struct CreditsView: View {
                                 .font(.caption)
                                 .padding()
                         }
-                        Image("test")
+                        Image(systemName: "person.crop.circle")
                             .resizable()
+                            .foregroundStyle(.quaternary)
                             .frame(width: 150, height: 150)
-                            .clipShape(Circle())
                     }
                 }
                 

@@ -10,7 +10,6 @@ import SwiftUI
 
 struct LocationDetailView: View {
         let location: Location
-        @StateObject private var progressManager = ProgressManager.shared
 
         var body: some View {
             ScrollView(.vertical, showsIndicators: true) {
@@ -40,15 +39,7 @@ struct LocationDetailView: View {
                         .padding()
 
                     // Show the overall location progress
-                    VStack {
-                        Text("\(Int(progressManager.getLocationProgress(for: location.id, quests: location.quests) * 100))% of Quests Completed")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                            .padding(.top, 2)
-                        ProgressView(value: progressManager.getLocationProgress(for: location.id, quests: location.quests), total: 1.0)
-                            .progressViewStyle(LinearProgressViewStyle())
-                            .frame(height: 10)
-                    }
+                    
                     .padding(.top, 10)
 
 

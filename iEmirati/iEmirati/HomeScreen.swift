@@ -12,59 +12,14 @@ import Combine
 import Foundation
 import SwiftData
 
-class ProgressManager: ObservableObject {
-    @AppStorage("questProgress") private var questProgressData: Data = Data()
 
-    static let shared = ProgressManager()
-
-    private init() {}
-
-    // Load the progress from AppStorage
-    func loadQuestProgress() -> [UUID: [UUID: Bool]] {
-        if let loadedProgress = try? JSONDecoder().decode([UUID: [UUID: Bool]].self, from: questProgressData) {
-            return loadedProgress
-        }
-        return [:]
-    }
-
-    // Save the progress to AppStorage
-    func saveQuestProgress(_ progress: [UUID: [UUID: Bool]]) {
-        if let encodedProgress = try? JSONEncoder().encode(progress) {
-            questProgressData = encodedProgress
-        }
-    }
-
-    // Get the progress for a specific location
-    func getProgress(for locationId: UUID) -> [UUID: Bool] {
-        let progress = loadQuestProgress()
-        return progress[locationId] ?? [:]
-    }
-
-    // Set the progress for a specific quest at a given location
-    func setProgress(for locationId: UUID, questId: UUID, completed: Bool) {
-        var progress = loadQuestProgress()
-
-        if progress[locationId] == nil {
-            progress[locationId] = [:]
-        }
-
-        progress[locationId]?[questId] = completed
-        saveQuestProgress(progress)
-    }
-
-    // Get the overall location progress (percentage of quests completed)
-    func getLocationProgress(for locationId: UUID, quests: [Quest]) -> Double {
-        let progress = loadQuestProgress()
-        let completedQuests = quests.filter { progress[locationId]?[$0.id] ?? false }
-        return Double(completedQuests.count) / Double(quests.count)
-    }
-}
 // Define the WordOfTheDay struct globally
 struct WordOfTheDay: Identifiable {
     let id = UUID()
     let word: String
     let meaning: String
     let example: String
+    let imageName: String
 }
 struct FoodItem: Identifiable {
     let id = UUID()
@@ -75,8 +30,8 @@ struct FoodItem: Identifiable {
 
 // Sample word list
 let words: [WordOfTheDay] = [
-    WordOfTheDay(word: NSLocalizedString("Arqoub", comment: "wordoftheday"), meaning: NSLocalizedString("Arqoub Meaning", comment: "wordoftheday"), example: NSLocalizedString("Arqoub Example", comment: "wordoftheday")),
-    WordOfTheDay(word: NSLocalizedString("Khor", comment: "wordoftheday"), meaning: NSLocalizedString("Khor Meaning", comment: "wordoftheday"), example: NSLocalizedString("Khor Example", comment: "wordoftheday"))
+    WordOfTheDay(word: NSLocalizedString("Arqoub", comment: "wordoftheday"), meaning: NSLocalizedString("Arqoub Meaning", comment: "wordoftheday"), example: NSLocalizedString("Arqoub Example", comment: "wordoftheday"), imageName: "arqoubimage"),
+    WordOfTheDay(word: NSLocalizedString("Khor", comment: "wordoftheday"), meaning: NSLocalizedString("Khor Meaning", comment: "wordoftheday"), example: NSLocalizedString("Khor Example", comment: "wordoftheday"), imageName: "khorimage")
 ]
 let traditionalFoods: [FoodItem] = [
     FoodItem(name: NSLocalizedString("Machboos", comment: "traditional food"), description: NSLocalizedString("Machboos Description", comment: "traditional food"), imageName: "machboos"),
@@ -91,32 +46,22 @@ func fetchWordOfTheDay() -> WordOfTheDay {
     return words[dayOfYear % words.count] // Cycle through the word list
 }
 
-// Struct to represent a quest
-struct Quest: Identifiable {
+// Struct to represent activities
+struct Activity: Identifiable {
     let id = UUID()
     let name: String
-    let description: String
 }
 
-// Struct to represent a location with quests
+// Struct to represent a location
 struct Location: Identifiable {
     let id = UUID()
     let name: String
     let imageName: String
     let description: String
     let coordinate: CLLocationCoordinate2D
-    let quests: [Quest]
+    let activities: [Activity]
     
-    // Store progress for quests
-    var progress: [UUID: Bool] = [:]
-
-    // Computed property to calculate percentage progress
-    var progressPercentage: Int {
-        let completedQuests = progress.values.filter { $0 }.count
-        let totalQuests = quests.count
-        return totalQuests > 0 ? Int((Double(completedQuests) / Double(totalQuests)) * 100) : 0
     }
-}
 
 struct HomeScreen: View {
     let locations: [Location] = [
@@ -124,26 +69,25 @@ struct HomeScreen: View {
                  imageName: "hervillage",
                  description: NSLocalizedString("hervilldesc", comment: "location"),
                  coordinate: CLLocationCoordinate2D(latitude: 24.476696, longitude: 54.331250),
-                 quests: [
-                    Quest(name: NSLocalizedString("hvillquest1", comment: "quest"), description: ""),
-                    Quest(name: NSLocalizedString("hvillquest2", comment: "quest"), description: "")
+                 activities: [
+                    Activity(name: NSLocalizedString("hvillquest1", comment: "quest")),
+                    Activity(name: NSLocalizedString("hvillquest2", comment: "quest"))
                  ]),
         Location(name: NSLocalizedString("alhosn", comment: "location"),
                  imageName: "qasrhosn",
                  description: NSLocalizedString("alhosndesc", comment: "location"),
                  coordinate: CLLocationCoordinate2D(latitude: 24.482405, longitude: 54.354719),
-                 quests: [
-                    Quest(name: NSLocalizedString("hosnquest1", comment: "quest"), description: ""),
-                    Quest(name: NSLocalizedString("hosnquest2", comment: "quest"), description: "")
+                 activities: [
+                    Activity(name: NSLocalizedString("hosnquest1", comment: "quest")),
+                    Activity(name: NSLocalizedString("hosnquest2", comment: "quest"))
                  ]),
         Location(name: NSLocalizedString("jubailmang", comment: "location"),
                  imageName: "jubailmang",
                  description: NSLocalizedString("jubailmangdesc", comment: "location"),
                  coordinate: CLLocationCoordinate2D(latitude: 24.5109261, longitude: 54.3258003),
-                 quests: [
-                    Quest(name: NSLocalizedString("jubailquest1", comment: "quest"), description: ""),
-                    Quest(name: NSLocalizedString("jubailquest2", comment: "quest"), description: "")
-                 ])
+                 activities: [
+                    Activity(name: NSLocalizedString("jubailquest1", comment: "quest")),
+                    Activity(name: NSLocalizedString("jubailquest2", comment: "quest")),])
     ]
     let foods: [FoodItem] = traditionalFoods
     var wordOfTheDay: WordOfTheDay {
@@ -295,9 +239,6 @@ struct HomeScreen: View {
     }
     struct LocationCardView: View {
         let location: Location
-        @State private var progressValue: Double = 0.0
-        @State private var progressPercentage: Int = 0
-
         var body: some View {
             VStack(alignment: .leading) {
                 Image(location.imageName)
@@ -309,46 +250,21 @@ struct HomeScreen: View {
 
                 Text(location.name)
                     .font(.headline)
-                    .padding(.top, 5)
+                    .padding(.top,4)
 
-                Text(location.description)
+                Text("Tap to view")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .lineLimit(2)
-
-                VStack {
-                    ProgressView(value: progressValue, total: 1.0)
-                        .progressViewStyle(LinearProgressViewStyle())
-                        .frame(height: 10)
-
-                    Text("\(progressPercentage)% Completed")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                        .padding(.top, 2)
-                }
-                .padding(.top, 5)
-                .onAppear {
-                    loadProgress() // Load progress when the view appears
-                }
+                .padding(.top,1)
             }
             .frame(width: 150)
             .padding(.vertical)
             .cornerRadius(15)
         }
-
-        private func loadProgress() {
-            let completedCount = location.quests.filter { quest in
-                ProgressManager.shared.getProgress(for: location.id)[quest.id] ?? false
-            }.count
-            let totalQuests = location.quests.count
-            progressValue = Double(completedCount) / Double(totalQuests)
-            progressPercentage = Int(progressValue * 100)
-        }
     }
     struct LocationDetailView: View {
         let location: Location
-        @StateObject private var progressManager = ProgressManager.shared
-
         var body: some View {
             ScrollView(.vertical, showsIndicators: true) {
                 VStack(spacing: 20) {
@@ -375,29 +291,21 @@ struct HomeScreen: View {
                     Text(location.description)
                         .font(.body)
                         .padding()
-
-                    // Show the overall location progress
-                    VStack {
-                        Text("\(Int(progressManager.getLocationProgress(for: location.id, quests: location.quests) * 100))% of Quests Completed")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                            .padding(.top, 2)
-                        ProgressView(value: progressManager.getLocationProgress(for: location.id, quests: location.quests), total: 1.0)
-                            .progressViewStyle(LinearProgressViewStyle())
-                            .frame(height: 10)
-                    }
-                    .padding(.top, 10)
-
-                    // "View Quests" Button
-                    NavigationLink(destination: QuestListPage(location: location, progressManager: progressManager)) {
-                        Text("View Quests")
+                    // Things To Do
+                    VStack{
+                        Text("Things to do:")
                             .font(.headline)
-                            .foregroundColor(.blue)
-                            .padding()
-                            .background(Capsule().stroke(Color.blue, lineWidth: 2))
-                    }
+                        ForEach(location.activities) { activity in
+                                               HStack {
+                                                   Image(systemName: "circlebadge.fill")
 
-                    // Open in Apple Maps Button with icon inside
+                                                       .foregroundColor(.accentColor)
+                                                   Text(activity.name)
+                                                       .font(.body)
+                                               }
+                                               .padding(.vertical, 5)
+                                           }
+                    }
                     Button(action: {
                         openInAppleMaps()
                     }) {
@@ -465,95 +373,31 @@ struct HomeScreen: View {
             }
         }
     }
-    struct QuestListPage: View {
-        let location: Location
-        @ObservedObject var progressManager: ProgressManager
 
-        @State private var questProgress: [UUID: Bool] = [:]
-        @State private var animatedProgress: Double = 0.0
-
-        var body: some View {
-            VStack {
-                ProgressView(value: animatedProgress, total: 1.0)
-                    .progressViewStyle(LinearProgressViewStyle())
-                    .frame(height: 20)
-                    .padding()
-                    .onChange(of: getLocationProgress()) { newValue in
-                        withAnimation(.easeInOut(duration: 0.5)) {
-                            animatedProgress = newValue
-                        }
-                    }
-
-                Text("\(Int(animatedProgress * 100))% Completed")
-                    .padding()
-                    .font(.title2)
-                    .fontWeight(.bold)
-
-                List(location.quests, id: \.id) { quest in
-                    HStack {
-                        Button(action: {
-                            toggleQuestProgress(quest.id)
-                        }) {
-                            HStack {
-                                if questProgress[quest.id] == true {
-                                    Image(systemName: "checkmark.circle.fill")
-                                        .foregroundColor(.accentColor)
-                                        .frame(width: 30, height: 30)
-                                } else {
-                                    Image(systemName: "circle")
-                                        .foregroundColor(.accentColor)
-                                        .frame(width: 30, height: 30)
-                                }
-                                Text(quest.name)
-                                    .font(.body)
-                                    .foregroundColor(.primary)
-                            }
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                    }
-                }
-
-                Spacer()
-            }
-            .navigationTitle("\(location.name) Quests")
-            .onAppear {
-                loadProgress()
-                animatedProgress = getLocationProgress()
-            }
-        }
-
-        private func toggleQuestProgress(_ questID: UUID) {
-            let currentProgress = questProgress[questID] ?? false
-            questProgress[questID] = !currentProgress
-
-            progressManager.setProgress(for: location.id, questId: questID, completed: !currentProgress)
-
-            withAnimation(.easeInOut(duration: 0.5)) {
-                animatedProgress = getLocationProgress()
-            }
-        }
-
-        private func getLocationProgress() -> Double {
-            let completed = location.quests.filter { quest in
-                questProgress[quest.id] == true
-            }.count
-
-            return Double(completed) / Double(location.quests.count)
-        }
-
-        private func loadProgress() {
-            let progress = progressManager.getProgress(for: location.id)
-            for quest in location.quests {
-                questProgress[quest.id] = progress[quest.id] ?? false
-            }
-        }
-    }
     struct WordOfTheDayView: View {
         let word: WordOfTheDay
 
         var body: some View {
             ScrollView {
                 VStack {
+                    ZStack {
+                        // Blurred frame
+                        Image(word.imageName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 150)
+                            .blur(radius: 10)
+
+                            .opacity(1)
+                        
+                        // Main image
+                        Image(word.imageName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 150)
+                            .cornerRadius(30)
+                            
+                    }
                     Text(word.word)
                         .font(.largeTitle)
                         .fontWeight(.bold)

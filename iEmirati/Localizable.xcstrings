@@ -72,28 +72,56 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "من أقدم قصور أبوظبي، لا يزال واقفاً حتى الآن."
+            "value" : "هذا معلم تاريخي وأقدم مبنى حجري في مدينة أبو ظبي، عاصمة دولة الإمارات العربية المتحدة. أشرف على بنائه محمد البستكي في عام 1761."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A classic. Still lives on to this day."
+            "value" : "This is a historical landmark and the oldest stone building in the city of Abu Dhabi, the capital of the United Arab Emirates. Its construction was supervised by Mohammed Al Bastaki in 1761."
           }
         }
       }
     },
     "also known as MayDreemurr on GitHub" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يعرف أيضا باسم MayDreemurr على GitHub"
+          }
+        }
+      }
     },
     "also known as S3eedMV1 on GitHub" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يعرف أيضا باسم S3eedMV1 على GitHub"
+          }
+        }
+      }
     },
     "also known as tyandco on GitHub" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يعرف أيضا باسم tyandco على GitHub"
+          }
+        }
+      }
     },
     "App Dev:" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مبرمج التطبيق:"
+          }
+        }
+      }
     },
     "Arqoub" : {
       "comment" : "wordoftheday",
@@ -160,10 +188,24 @@
       }
     },
     "But instead of using these choices, I decided to just straight up program it, although it's my first time joining the challenge." : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ولكن بدلا من استخدام هذه الخيارات، قررت برمجتها مباشرة، على الرغم من أنها المرة الأولى التي أنضم فيها إلى التحدي."
+          }
+        }
+      }
     },
     "Credits" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الاعتمادات"
+          }
+        }
+      }
     },
     "eoe" : {
       "comment" : "onboarding",
@@ -216,16 +258,44 @@
       }
     },
     "for encouraging me to make this app" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لتشجيعي على إنشاء هذا التطبيق"
+          }
+        }
+      }
     },
     "for helping me with their wonderful ideas" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لمساعدتي بأفكارهم الرائعة"
+          }
+        }
+      }
     },
     "for supporting my work" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لدعم عملي"
+          }
+        }
+      }
     },
     "for testing the app" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لتجربة التطبيق"
+          }
+        }
+      }
     },
     "Get Started" : {
       "localizations" : {
@@ -244,7 +314,14 @@
       }
     },
     "GitHub Repo" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "موقع GitHub"
+          }
+        }
+      }
     },
     "Harees" : {
       "comment" : "traditional food",
@@ -260,16 +337,29 @@
     "Harees Description" : {
       "comment" : "traditional food",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا الطعام مشابه للعصيدة. لكنه ليس مثل العصيدة. إنه مصنوع من حبوب القمح واللحوم والسمن، وكلها مهروسة في طبق واحد."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "This food is kinda like porridge, but it just hits different. Sure, the look and smell might be revolting to you, but who knows what it tastes like?"
+            "value" : "This food is similar to porridge. But, it’s not anything like porridge. It’s made of wheat grain, meat, and ghee, all mashed up in one dish."
           }
         }
       }
     },
     "he has no GitHub account :(" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ليس لديه حساب GitHub :("
+          }
+        }
+      }
     },
     "hervill" : {
       "comment" : "location",
@@ -296,13 +386,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مكان ذهبت اليه مع مدرستك."
+            "value" : "هذا المكان هو مجرد إعادة بناء لقرية صحراوية تقليدية مع قائمة منتظمة من الأحداث والمعارض. تم بناؤه في عام 2001."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "That one place you went with your school."
+            "value" : "This place is just a reconstruction of a traditional desert village with a regular roster of events & exhibitions. Built in 2001."
           }
         }
       }
@@ -454,13 +544,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مكان معروف بسبب الكميات الكبيرة من أشجار القرم."
+            "value" : "هذه هي الوجهة التعليمية والطبيعية والترفيهية الأولى في أبو ظبي، مع التركيز على الحفاظ على أشجار القرم ودعم التنوع البيولوجي."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Known for the huge amount of Mangrove trees grown here."
+            "value" : "This is Abu Dhabi’s first educational, nature, and leisure destination, focusing on mangrove conservation and biodiversity support."
           }
         }
       }
@@ -502,7 +592,14 @@
       }
     },
     "Khamis Matter" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خميس مطر"
+          }
+        }
+      }
     },
     "Khor" : {
       "comment" : "wordoftheday",
@@ -572,6 +669,12 @@
     "Luqaimat Description" : {
       "comment" : "traditional food",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إنه المفضل لدى الجميع. عادة ما يكون مغطى بدبس التمر، أو العسل. يحب بعض الناس حقنه بالجبن أو نوتيلا."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -594,6 +697,12 @@
     "Machboos Description" : {
       "comment" : "traditional food",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا المزيج اللذيذ من الأرز والكمون والملح والفلفل الأسود والكركم والأوراق المجففة والليمون المجفف، يتناسب دائما مع اختيارك من اللحوم."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -603,10 +712,24 @@
       }
     },
     "May the best prototype win!" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أتمنى أن يفوز أفضل نموذج أولي!"
+          }
+        }
+      }
     },
     "Mayed AlKaabi" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مايد الكعبي"
+          }
+        }
+      }
     },
     "Meaning: %@" : {
       "extractionState" : "manual",
@@ -626,16 +749,44 @@
       }
     },
     "More" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المزيد"
+          }
+        }
+      }
     },
     "My Family" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عائلتي"
+          }
+        }
+      }
     },
     "My Friends" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أصدقائي"
+          }
+        }
+      }
     },
     "My Teachers" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أساتذتي"
+          }
+        }
+      }
     },
     "onboardingremind" : {
       "comment" : "onboarding",
@@ -672,7 +823,14 @@
       }
     },
     "Open in Safari" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "افتح في سفاري"
+          }
+        }
+      }
     },
     "Open in  Maps" : {
       "comment" : " ",
@@ -693,10 +851,24 @@
       }
     },
     "Saeed Yasser" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سعيد ياسر"
+          }
+        }
+      }
     },
     "Special thanks to:" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شكر خاص إلى:"
+          }
+        }
+      }
     },
     "splash1" : {
       "localizations" : {
@@ -749,7 +921,14 @@
       }
     },
     "Tap to learn more!" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اضغط لتتعلم المزيد!"
+          }
+        }
+      }
     },
     "Tap to learn the meaning!" : {
       "localizations" : {
@@ -768,7 +947,14 @@
       }
     },
     "Teammates/Contributors:" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "زملاء الفريق/المساهمون:"
+          }
+        }
+      }
     },
     "That feature is coming soon!" : {
       "comment" : "onboarding",
@@ -807,7 +993,14 @@
       }
     },
     "The Story" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قصة التطبيق"
+          }
+        }
+      }
     },
     "This app is in beta" : {
       "comment" : "onboarding",
@@ -828,7 +1021,14 @@
       }
     },
     "This app was made for the iOS Design Challenge 2024-2025. The theme was \"UAE National Identity\"." : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تم تصميم هذا التطبيق لتحدي تصميم iOS 2024-2025. كان الموضوع \"الهوية الوطنية الإماراتية\"."
+          }
+        }
+      }
     },
     "Traditional Foods" : {
       "localizations" : {
@@ -867,7 +1067,14 @@
       }
     },
     "We were told to create an app prototype via either Keynote or Figma, that captures the essence of UAE National Identity, focusing on Heritage and Values - the core of what it means to be Emirati and part of the UAE." : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "طلب منا إنشاء نموذج أولي للتطبيق عبر Keynote أو Figma، والذي يجسد جوهر الهوية الوطنية الإماراتية، مع التركيز على التراث والقيم - جوهر ما يعنيه أن تكون إماراتيا وجزءا من دولة الإمارات العربية المتحدة."
+          }
+        }
+      }
     },
     "Welcome to iEmirati!" : {
       "comment" : "onboarding",
@@ -888,7 +1095,14 @@
       }
     },
     "What's this..?" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ما هذا..؟"
+          }
+        }
+      }
     },
     "Word of the Day" : {
       "localizations" : {
@@ -907,10 +1121,24 @@
       }
     },
     "You!" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أنت!"
+          }
+        }
+      }
     },
     "Yousef Alkhemeiri" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يوسف الخميري"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
