@@ -22,7 +22,7 @@ iEmirati is on TestFlight!
 
 Here's the link:
 
-"https://testflight.apple.com/join/c5gjecKD
+https://testflight.apple.com/join/c5gjecKD
 
 ## How to Build
 To build iEmirati on your iOS device, all you need is a Mac and Xcode.
