@@ -17,7 +17,12 @@ The features included are:
 - Explore Locations (a list of locations to visit, with Apple Maps and Google Maps support!)
 - Things to do (each location comes with a list of activities)
 - Foods to try (it's in the name)
+## Testflight
+iEmirati is on TestFlight!
+<img src="https://en.wikipedia.org/wiki/TestFlight#/media/File:TestFlight_Icon.png" align="center">
+Here's the link:
 
+<link src="https://testflight.apple.com/join/c5gjecKD">
 
 ## How to Build
 To build iEmirati on your iOS device, all you need is a Mac and Xcode.
