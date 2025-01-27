@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "ProgressResetLight.png",
+      "filename" : "remindlight.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "ProgressResetDark.png",
+      "filename" : "reminddark.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

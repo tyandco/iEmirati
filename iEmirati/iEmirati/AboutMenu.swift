@@ -130,6 +130,7 @@ struct CreditsView: View {
                 Text("App Dev:")
                     .font(.largeTitle)
                     .padding(.top, 20)
+                    .fontWeight(.bold)
                 HStack {
                     //me
                     Image("typfp")
@@ -152,6 +153,7 @@ struct CreditsView: View {
                 }
                 Text("Teammates/Contributors:")
                     .font(.largeTitle)
+                    .fontWeight(.bold)
                     .padding(.top)
                 VStack{
                     HStack {
@@ -203,10 +205,10 @@ struct CreditsView: View {
                                 .font(.caption)
                                 .padding()
                         }
-                        Image(systemName: "person.crop.circle")
+                        Image("khamispfp")
                             .resizable()
-                            .foregroundStyle(.quaternary)
                             .frame(width: 150, height: 150)
+                            .clipShape(Circle())
                     }
                 }
                 

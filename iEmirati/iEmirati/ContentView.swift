@@ -8,35 +8,7 @@ import SwiftUI
 import SwiftData
 import UIKit
 
-extension UIImage {
-    func dominantColor() -> UIColor? {
-        guard let inputImage = CIImage(image: self) else { return nil }
-        let extentVector = CIVector(x: inputImage.extent.origin.x,
-                                    y: inputImage.extent.origin.y,
-                                    z: inputImage.extent.size.width,
-                                    w: inputImage.extent.size.height)
 
-        guard let filter = CIFilter(name: "CIAreaAverage", parameters: [
-            kCIInputImageKey: inputImage,
-            kCIInputExtentKey: extentVector
-        ]) else { return nil }
-
-        guard let outputImage = filter.outputImage else { return nil }
-        var bitmap = [UInt8](repeating: 0, count: 4)
-        let context = CIContext(options: [.workingColorSpace: kCFNull!])
-        context.render(outputImage,
-                       toBitmap: &bitmap,
-                       rowBytes: 4,
-                       bounds: CGRect(x: 0, y: 0, width: 1, height: 1),
-                       format: .RGBA8,
-                       colorSpace: nil)
-
-        return UIColor(red: CGFloat(bitmap[0]) / 255.0,
-                       green: CGFloat(bitmap[1]) / 255.0,
-                       blue: CGFloat(bitmap[2]) / 255.0,
-                       alpha: CGFloat(bitmap[3]) / 255.0)
-    }
-}
 struct ContentView: View {
     @AppStorage("shouldShowOnboarding") var shouldShowOnboarding: Bool = true
     @State private var showSplash = true
@@ -191,11 +163,22 @@ struct PageView: View {
 
     var body: some View {
         VStack {
-            Image(imageName) // Load image from assets
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 250, height: 250) // Adjust size as needed
-                .padding()
+            ZStack {
+                            // Blurred frame
+                            Image(imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(height: 250)
+                                .blur(radius: 10)
+
+                                .opacity(1)
+                            
+                            // Main image
+                Image(imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 250)
+                        }
 
             Text(NSLocalizedString(title, comment: "onboarding"))
                 .font(.system(size: 42, weight: .heavy))
@@ -214,10 +197,10 @@ struct PageView: View {
                 }) {
                     Text("Get Started")
                         .foregroundColor(.white)
-                        .frame(width: 200, height: 50)
-                        .fontWeight(.heavy)
+                        .frame(width: 135, height: 50)
+                        .fontWeight(.bold)
                         .background(Color.accentColor)
-                        .cornerRadius(8)
+                        .cornerRadius(23)
                 }
                 .padding()// Animate button color change
             }

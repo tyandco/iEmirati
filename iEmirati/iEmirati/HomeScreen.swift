@@ -84,7 +84,7 @@ struct HomeScreen: View {
         Location(name: NSLocalizedString("jubailmang", comment: "location"),
                  imageName: "jubailmang",
                  description: NSLocalizedString("jubailmangdesc", comment: "location"),
-                 coordinate: CLLocationCoordinate2D(latitude: 24.5109261, longitude: 54.3258003),
+                 coordinate: CLLocationCoordinate2D(latitude: 24.5451874, longitude: 54.4828312),
                  activities: [
                     Activity(name: NSLocalizedString("jubailquest1", comment: "quest")),
                     Activity(name: NSLocalizedString("jubailquest2", comment: "quest")),])

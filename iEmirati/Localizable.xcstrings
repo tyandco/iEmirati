@@ -1,36 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@ Quests" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ المهمات"
-          }
-        }
-      }
-    },
-    "%lld%% Completed" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld%% تم انهائه"
-          }
-        }
-      }
-    },
-    "%lld%% of Quests Completed" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld%%تم انهائه"
-          }
-        }
-      }
-    },
     "About" : {
       "localizations" : {
         "ar" : {
@@ -214,13 +184,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تتم إعادة تعيين تقدم المهام في كل مرة تعيد فيها تشغيل التطبيق. هذا أمر طبيعي، وسيتم إصلاحه قريبًا إذا تم إصدار التطبيق على متجر التطبيقات."
+            "value" : "انتقل إلى الإعدادات > التطبيقات > iEmirati > اللغة، واختر اللغة التي تريدها!"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "The progress for the quests resets every time you relaunch. That’s natural, and will be fixed soon, if the app will be released on the App Store."
+            "value" : "Go to Settings > Apps > iEmirati > Language, and choose the language you want!"
           }
         }
       }
@@ -356,7 +326,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ليس لديه حساب GitHub :("
+            "value" : "يعرف أيضا باسم khamisalali على GitHub"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "also known as khamisalali on GitHub"
           }
         }
       }
@@ -420,13 +396,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "استكشف القصر"
+            "value" : "استكشف الحصن الداخلي"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Explore the castle"
+            "value" : "Explore the inner fort"
           }
         }
       }
@@ -438,13 +414,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "اكتشف القطع الأثرية التاريخية"
+            "value" : "استكشف المجمع الثقافي"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Check out the historical artifacts"
+            "value" : "Check out the Cultural Foundation building"
           }
         }
       }
@@ -456,13 +432,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تجول في المنطقة"
+            "value" : "اكتشف القطع الأثرية"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Look around the area"
+            "value" : "Discover artifacts"
           }
         }
       }
@@ -474,13 +450,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "اشتر شيء"
+            "value" : "شاهد الحرفيين يصنعون الفخار، ينفخون الزجاج، وينسجون القماش على السدو"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buy something as a memory"
+            "value" : "Watch artisans make pottery, blow glass and weave fabric on a loom"
           }
         }
       }
@@ -492,13 +468,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تزامن iCloud"
+            "value" : "هذا كل شيء!"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "iCloud Sync"
+            "value" : "That’s it!"
           }
         }
       }
@@ -568,7 +544,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Walk in the Mangrove Forests"
+            "value" : "Walk in the Mangrove forests"
           }
         }
       }
@@ -586,7 +562,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bird Watching"
+            "value" : "Bird watching"
           }
         }
       }
@@ -795,13 +771,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تنبيه"
+            "value" : "تريده باللغة الانجليزية؟"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reminder"
+            "value" : "Want it in Arabic?"
           }
         }
       }
@@ -946,6 +922,16 @@
         }
       }
     },
+    "Tap to view" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اضغط للعرض"
+          }
+        }
+      }
+    },
     "Teammates/Contributors:" : {
       "localizations" : {
         "ar" : {
@@ -963,13 +949,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "هذه الميزة قادمة قريباً!"
+            "value" : "تفضل وجرب التطبيق!"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "That feature is coming soon!"
+            "value" : "Go ahead and try the app!"
           }
         }
       }
@@ -998,6 +984,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "قصة التطبيق"
+          }
+        }
+      }
+    },
+    "Things to do:" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أشياء للقيام بها:"
           }
         }
       }
@@ -1052,16 +1048,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version: %@"
-          }
-        }
-      }
-    },
-    "View Quests" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "اعرض المهمات"
           }
         }
       }
