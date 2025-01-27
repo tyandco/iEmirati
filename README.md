@@ -19,10 +19,10 @@ The features included are:
 - Foods to try (it's in the name)
 ## Testflight
 iEmirati is on TestFlight!
-<img src="https://en.wikipedia.org/wiki/TestFlight#/media/File:TestFlight_Icon.png" align="center">
+
 Here's the link:
 
-<link src="https://testflight.apple.com/join/c5gjecKD">
+"https://testflight.apple.com/join/c5gjecKD
 
 ## How to Build
 To build iEmirati on your iOS device, all you need is a Mac and Xcode.
