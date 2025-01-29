@@ -19,6 +19,7 @@ The features included are:
 - Foods to try (it's in the name)
 ## Testflight
 iEmirati is on TestFlight!
+<img src="iEmirati/iEmirati/Assets.xcassets/iCloud.imageset/testflight.png">
 
 Here's the link:
 
