@@ -17,6 +17,57 @@
         }
       }
     },
+    "aldissais" : {
+      "comment" : "traditional game",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الدسيس"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Al-Dissais (الدسيس)"
+          }
+        }
+      }
+    },
+    "aldissaisdesc" : {
+      "comment" : "traditional game desc",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "واحدة من أبرز الألعاب التقليدية في دولة الإمارات العربية المتحدة والعالم العربي. مشابه للعبة الغميضة."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One of the most prominent traditional games in the UAE and the Arab world. Similar to hide-and-seek."
+          }
+        }
+      }
+    },
+    "aldissaisrules" : {
+      "comment" : "how to play",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتطلب اللعبة مشاركة ثلاثة أطفال أو أكثر، حيث يبدأ أحدهم في البحث عن الآخرين. إذا تمكنوا من الإمساك بواحد، فإنهم يضعون أيديهم على رؤوسهم للإعلان عن انتصارهم."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The game requires the participation of three or more children, with one of them starting to search for the others. If they manage to catch one, they place their hand on their head to announce their victory."
+          }
+        }
+      }
+    },
     "alhosn" : {
       "comment" : "location",
       "extractionState" : "manual",
@@ -425,6 +476,9 @@
         }
       }
     },
+    "How it's played:" : {
+
+    },
     "hvillquest1" : {
       "comment" : "quest",
       "extractionState" : "manual",
@@ -573,6 +627,57 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "خميس مطر"
+          }
+        }
+      }
+    },
+    "khobzrigag" : {
+      "comment" : "traditional game",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خبز رقاق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khobz Riqaq (خبز رقاق)"
+          }
+        }
+      }
+    },
+    "khobzrigagdesc" : {
+      "comment" : "traditional game desc",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذه اللعبة تقتصر على الأولاد فقط تمارس هذه اللعبة في فصل الصيف في المناطق المفتوحة أو على سواحل البحر\nالرقاق نوع من أنواع الخبز الخفيف سمت هذه اللعبة بهذا الاسم لان طريقة يد اللعب تكون نفس طريقة عجن الرقاق.\nهي لعبة جماعية تعتمد على اللياقة البدنية العالية ، وكانت تلعب بالأحياء وأمام المنازل أو داخل أحواش المنازل."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This game is limited to boys only and is played in the summer in open areas or on the shores of the sea.\nThe game is named after Al-Riqaq, a type of light bread, because the hand movements in the game are similar to the way the dough for riqaq is kneaded.\nIt’s a group game that requires high physical fitness and was often played in neighborhoods, in front of houses, or inside the courtyards of homes."
+          }
+        }
+      }
+    },
+    "khobzrigaghowtoplay" : {
+      "comment" : "how to play",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تحتاج هذه اللعبة إلى أرض واسعة ويطول وقت هذه اللعبة تبعاً لعدد اللاعبين وسميت اللعبة بهذا الاسم نسبة إلى الخبز الرقيق والمسمى خبز\"الرقاق\" حيث كانت تباع كل خبزتين ببيزة.\n\nوالبيزة عملة هندية كانت تستعمل بدول الخليج خلال فترة الأربعينات.\nوتبدأ اللعبة بعد إجراء القرعة بين اللاعبين والذي يقع عليه الدور يقوم برسم خط لبداية القفز\n\nثم يقوم اللاعبون خلف خط البداية بشكل مستقيم الواحد تلو الأخر، وبعد ذلك يقوم اللاعب الذي وقعت عليه القرعة بثني جسمه كما في الركوع أثناء الصلاة وينزل من رأسه قليلاً ثم يبدأ اللاعبون بالقفز من فوقه ويحق لكل لاعب أن يضع يديه فوق ظهر لاعب \"الهول\" – من عليه الدور- ليتم عملية القفز،\n\nوالذي يقفز من فوق ظهره يعود لخط البداية حسب دوره بين اللاعبين ، وهكذا إلى أن يخطئ أحدهم فيقف مكان اللاعب الذي بدأ اللعبة ،\n\nويحتسب الخطأ إذا لمس اللاعب برأس لاعب الهول أو أن يدفعه برجله أو في حاله عدم استطاعته القفز أو وقوعه على الأرض ،\n\nوتستمر هذه اللعبة إلى أن يردد اللاعبون نهايتها ، وطوال اللعب يردد اللاعبون أهزوجة : خبز رقاق هنتين ببيزة .. خبز رقاق هنتين ببيزة ."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This game requires a wide area, and its duration depends on the number of players. The game is named after Al-Riqaq, a type of thin bread, because it was sold two loaves for one Biza.\nThe Biza was an Indian currency used in the Gulf countries during the 1940s.\nThe game begins after a draw among the players. The one chosen draws a line to mark the starting point for jumping. The players then line up straight behind the starting line, one after another. The player selected for the role bends his body as if bowing during prayer, lowering his head slightly. The other players then jump over him, placing their hands on his back to help them leap.\nThe player who jumps over the back of the one chosen returns to the starting line, according to their turn. The game continues until someone makes a mistake, and that player takes the position of the one who started the game.\nA mistake is counted if a player touches the head of the player acting as the “hole” (the one on whom the turn falls), pushes them with their leg, fails to jump, or falls to the ground.\nThe game continues until the players call for the end, and throughout the game, the players chant the rhyme:\n‘Khubz Riqaq Hantein Biza… Khubz Riqaq Hantein Biza.’"
           }
         }
       }
@@ -942,6 +1047,57 @@
         }
       }
     },
+    "teela" : {
+      "comment" : "traditional game",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تيلة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teela (تيلة)"
+          }
+        }
+      }
+    },
+    "teeladesc" : {
+      "comment" : "traditional game desc",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لعبة تُلعب في مجموعات في ساحة مفتوحة، حيث يحاول اللاعبون إخراج كرات خصومهم."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A game played in groups in an open courtyard, where players try to knock out their opponents' marbles."
+          }
+        }
+      }
+    },
+    "teelarules" : {
+      "comment" : "how to play",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتم لعبها عادة من قبل 2 إلى 4 لاعبين.\nستحتاج إلى سطح مستوٍ، كرات زجاجية، ودائرة أو مساحة مرسومة حيث يمكن رمي أو قذف الكرات. عادةً ما يُستخدم كرة واحدة كـ “رماية”.\nيتناوب اللاعبون في قذف أو رمي الكرات (باستخدام الإبهام أو إصبع آخر) إلى الدائرة أو نحو كرات أخرى.\nالهدف هو ضرب أو إخراج الكرات من الدائرة مع الحفاظ على كرة الرماية داخل اللعبة.\nقد يحصل اللاعبون على نقاط بناءً على عدد الكرات التي يمكنهم إدخالها في الدائرة أو من خلال إخراج كرات الآخرين.\nعادةً ما يكون الفائز هو اللاعب الذي يجمع أكبر عدد من الكرات أو يحقق هدفًا محددًا (مثل إخراج جميع كرات الخصم أو إدخال كرة في مكان معين)."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It’s typically played by 2-4 players.\nYou’ll need a flat surface, marbles, and a circle or a drawn-out playing area where marbles can be flicked or thrown. One marble is typically used as a “shooter.”\nPlayers take turns flicking or shooting marbles (using their thumb or another finger) into the circle or at other marbles.\nThe objective is to hit or knock out marbles from the circle while keeping your shooter in play.\nPlayers may score points based on how many marbles they can get into the circle or by knocking out the marbles of others.\nThe winner is usually the player who collects the most marbles or completes a specific objective (e.g., knocking out all opponent marbles or landing a marble in a specific spot).\n"
+          }
+        }
+      }
+    },
     "That feature is coming soon!" : {
       "comment" : "onboarding",
       "extractionState" : "manual",
@@ -1035,6 +1191,9 @@
           }
         }
       }
+    },
+    "Traditional Games" : {
+
     },
     "Version: %@" : {
       "localizations" : {

@@ -10,7 +10,6 @@
 		AD49323C2CC0F543007A2DE2 /* AboutMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD49323B2CC0F543007A2DE2 /* AboutMenu.swift */; };
 		AD49324F2CC1440F007A2DE2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD49324E2CC1440F007A2DE2 /* Localizable.xcstrings */; };
 		AD4D012E2CE24B6B00F1948F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D012D2CE24B6B00F1948F /* DetailView.swift */; };
-		AD8170732CF1AF890026EFDB /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = AD8170722CF1AF890026EFDB /* SQLite */; };
 		AD9646472D3F653600E2C926 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9646462D3F653600E2C926 /* Launch Screen.storyboard */; };
 		ADAA6BEE2CCF63F800DB019C /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA6BED2CCF63F800DB019C /* LocationMapView.swift */; };
 		ADAA6BF02CCF641400DB019C /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAA6BEF2CCF641400DB019C /* LocationDetailView.swift */; };
@@ -44,7 +43,7 @@
 /* Begin PBXFileReference section */
 		AD0649A42D4802380062D5FF /* iEmirati.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iEmirati.entitlements; sourceTree = "<group>"; };
 		AD49323B2CC0F543007A2DE2 /* AboutMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMenu.swift; sourceTree = "<group>"; };
-		AD49324E2CC1440F007A2DE2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		AD49324E2CC1440F007A2DE2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = /Users/tydesilly/Documents/GitHub/iEmirati/iEmirati/Localizable.xcstrings; sourceTree = "<absolute>"; };
 		AD4D012D2CE24B6B00F1948F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		AD9646462D3F653600E2C926 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		ADAA6BED2CCF63F800DB019C /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
@@ -68,7 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD8170732CF1AF890026EFDB /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +241,6 @@
 			);
 			mainGroup = ADC1F47E2CBB03CB00534ACE;
 			packageReferences = (
-				AD8170712CF1AF890026EFDB /* XCRemoteSwiftPackageReference "SQLite" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = ADC1F4882CBB03CB00534ACE /* Products */;
@@ -487,7 +484,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tyandco.iEmirati;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tyandcodebug.iEmirati;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = NO;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -656,25 +653,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		AD8170712CF1AF890026EFDB /* XCRemoteSwiftPackageReference "SQLite" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.15.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		AD8170722CF1AF890026EFDB /* SQLite */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AD8170712CF1AF890026EFDB /* XCRemoteSwiftPackageReference "SQLite" */;
-			productName = SQLite;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ADC1F47F2CBB03CB00534ACE /* Project object */;
 }

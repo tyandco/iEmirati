@@ -11,6 +11,7 @@ import CoreLocation
 import Combine
 import Foundation
 import SwiftData
+import UIKit
 
 
 // Define the WordOfTheDay struct globally
@@ -27,6 +28,13 @@ struct FoodItem: Identifiable {
     let description: String
     let imageName: String
 }
+struct TraditionalGame: Identifiable {
+    let id = UUID()
+    let name: String
+    let image: String
+    let howToplay: String
+    let description: String
+}
 
 // Sample word list
 let words: [WordOfTheDay] = [
@@ -38,7 +46,11 @@ let traditionalFoods: [FoodItem] = [
     FoodItem(name: NSLocalizedString("Harees", comment: "traditional food"), description: NSLocalizedString("Harees Description", comment: "traditional food"), imageName: "harees"),
     FoodItem(name: NSLocalizedString("Luqaimat", comment: "traditional food"), description: NSLocalizedString("Luqaimat Description", comment: "traditional food"), imageName: "luqaimat")
 ]
-
+let traditionalGames: [TraditionalGame] = [
+    TraditionalGame(name: NSLocalizedString("teela", comment: "traditional game"), image: "teela", howToplay: NSLocalizedString("teelarules", comment: "how to play") , description: NSLocalizedString("teeladesc", comment: "traditional game desc")),
+    TraditionalGame(name: NSLocalizedString("aldissais", comment: "traditional game"), image: "aldissais", howToplay: NSLocalizedString("aldissaisrules", comment: "how to play") , description: NSLocalizedString("aldissaisdesc", comment: "traditional game desc")),
+    TraditionalGame(name: NSLocalizedString("khobzrigag", comment: "traditional game"), image: "khobzrigag", howToplay: NSLocalizedString("khobzrigaghowtoplay", comment: "how to play") , description: NSLocalizedString("khobzrigagdesc", comment: "traditional game desc")),
+]
 // This function picks a word based on the date
 func fetchWordOfTheDay() -> WordOfTheDay {
     let calendar = Calendar.current
@@ -90,6 +102,7 @@ struct HomeScreen: View {
                     Activity(name: NSLocalizedString("jubailquest2", comment: "quest")),])
     ]
     let foods: [FoodItem] = traditionalFoods
+    let games: [TraditionalGame] = traditionalGames
     var wordOfTheDay: WordOfTheDay {
         fetchWordOfTheDay()
     }
@@ -130,6 +143,21 @@ struct HomeScreen: View {
                                                 ForEach(foods) { food in
                                                     NavigationLink(destination: FoodDetailView(food: food)){
                                                         FoodCardView(food: food)
+                                                    }
+                                                }
+                                            }
+                                            .padding(.horizontal)
+                                        }
+                                        .frame(height: 200)
+                    Text("Traditional Games")
+                                            .font(.title2)
+                                            .fontWeight(.bold)
+                                            .padding(.all)
+                                        ScrollView(.horizontal, showsIndicators: false) {
+                                            HStack(spacing: 15) {
+                                                ForEach(games) { trdgame in
+                                                    NavigationLink(destination: TrdGameDetailView(game: trdgame)){
+                                                        TrdGameCardView(tradgame: trdgame)
                                                     }
                                                 }
                                             }
@@ -210,7 +238,7 @@ struct HomeScreen: View {
                                 Image(food.imageName)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(height: 150)
+                                    .frame(width:300,height: 200)
                                     .blur(radius: 10)
 
                                     .opacity(1)
@@ -218,8 +246,8 @@ struct HomeScreen: View {
                                 // Main image
                     Image(food.imageName)
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 150)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width:300,height: 200)
                         .cornerRadius(30)
                             }
                 Text(food.name)
@@ -230,6 +258,7 @@ struct HomeScreen: View {
                 Text(food.description) // Display the description of the selected food
                     .font(.body)
                     .padding(.top, 10)
+                    .multilineTextAlignment(.center)
                 
                 Spacer()
             }
@@ -373,7 +402,80 @@ struct HomeScreen: View {
             }
         }
     }
+    struct TrdGameCardView: View {
+        let tradgame: TraditionalGame
 
+        var body: some View {
+            VStack(alignment: .leading) {
+                Image(tradgame.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 200, height: 100, alignment: .center)
+                    .clipped()
+                    .cornerRadius(10)
+
+                Text(tradgame.name)
+                    .font(.headline)
+                    .padding(.top, 5)
+
+                Text("Tap to learn more!")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .lineLimit(2)
+            }
+            .frame(width: 200)
+            .padding(.vertical)
+            .cornerRadius(15)
+        }
+    }
+    struct TrdGameDetailView: View {
+        let game: TraditionalGame
+        
+        var body: some View {
+            ScrollView{
+                VStack {
+                    ZStack {
+                        // Blurred frame
+                        Image(game.image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width:300,height: 200)
+                            .blur(radius: 10)
+                            .opacity(1)
+                            .padding()
+                        // Main image
+                        Image(game.image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width:300,height: 200)
+                            .cornerRadius(30)
+                    }
+                    .padding()
+                    Text(game.name)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .padding(.top, 10)
+                    
+                    Text(game.description)
+                        .multilineTextAlignment(.center)
+                        .font(.body)
+                        .padding(.top, 10)
+                    Text("How it's played:")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding()
+                    Text(game.howToplay)
+                        .font(.body)
+                        .padding()
+                        .multilineTextAlignment(.center)
+                    
+                    Spacer()
+                }
+            }
+            .padding()
+            .navigationTitle("Traditional Games")
+        }
+    }
     struct WordOfTheDayView: View {
         let word: WordOfTheDay
 
