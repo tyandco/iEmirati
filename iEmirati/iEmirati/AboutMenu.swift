@@ -9,6 +9,75 @@ import SwiftUI
 import UIKit
 import WebKit
 
+
+struct GitHubProfileImageView: View {
+    let username: String
+    @State private var image: UIImage? = nil
+
+    var body: some View {
+        Group {
+            if let image = image {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+                    .clipShape(Circle())
+            } else {
+                ProgressView()
+                    .frame(width: 150, height: 150)
+            }
+        }
+        .frame(width: 150, height: 150)
+        .onAppear {
+            checkForProfilePictureUpdate()
+        }
+    }
+
+    private func checkForProfilePictureUpdate() {
+        let urlString = "https://github.com/\(username).png"
+        guard let url = URL(string: urlString) else { return }
+
+        // Get the current cached image file URL
+        if let cacheURL = getCacheFileURL(),
+           let cachedData = try? Data(contentsOf: cacheURL),
+           let cachedImage = UIImage(data: cachedData) {
+            self.image = cachedImage
+        }
+
+        // Fetch the latest image from GitHub to compare
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url),
+               let newImage = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    if self.image == nil || !cachedDataMatches(newData: data) {
+                        self.image = newImage
+                        saveImageToCache(newImage)
+                    }
+                }
+            }
+        }
+    }
+
+    private func cachedDataMatches(newData: Data) -> Bool {
+        if let cacheURL = getCacheFileURL(),
+           let cachedData = try? Data(contentsOf: cacheURL) {
+            return cachedData == newData
+        }
+        return false
+    }
+
+    private func saveImageToCache(_ image: UIImage) {
+        if let data = image.pngData(),
+           let url = getCacheFileURL() {
+            try? data.write(to: url)
+        }
+    }
+
+    private func getCacheFileURL() -> URL? {
+        let fileManager = FileManager.default
+        guard let cacheDirectory = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first else { return nil }
+        return cacheDirectory.appendingPathComponent("\(username).png")
+    }
+}
 struct WebView: UIViewRepresentable {
     let url: URL
 
@@ -133,11 +202,8 @@ struct CreditsView: View {
                     .fontWeight(.bold)
                 HStack {
                     //me
-                    Image("typfp")
-                        .resizable()
-                        .frame(width: 150, height: 150)
-                        .clipShape(Circle())
-                        .padding()
+                    GitHubProfileImageView(username: "tyandco")
+                                            .padding()
                     VStack{
                         Text("Yousef Alkhemeiri")
                             .font(.headline)
@@ -169,17 +235,13 @@ struct CreditsView: View {
                                 .multilineTextAlignment(.center)
                                 .padding()
                         }
-                        Image("mayypfp")
-                            .resizable()
-                            .frame(width: 150, height: 150)
-                            .clipShape(Circle())
+                        GitHubProfileImageView(username: "MayDreemurr")
+                                                .padding()
                     }
                     HStack {
                         //saeed
-                        Image("saeedpfp")
-                            .resizable()
-                            .frame(width: 150, height: 150)
-                            .clipShape(Circle())
+                        GitHubProfileImageView(username: "S3eedMV1")
+                                                .padding()
                         VStack{
                             Text("Saeed Yasser")
                                 .font(.headline)
@@ -205,10 +267,8 @@ struct CreditsView: View {
                                 .font(.caption)
                                 .padding()
                         }
-                        Image("khamispfp")
-                            .resizable()
-                            .frame(width: 150, height: 150)
-                            .clipShape(Circle())
+                        GitHubProfileImageView(username: "khamisalali")
+                                                .padding()
                     }
                 }
                 
