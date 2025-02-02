@@ -246,6 +246,26 @@
         }
       }
     },
+    "Etiquette" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "السنع"
+          }
+        }
+      }
+    },
+    "Etiquette in the UAE" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "السنع في الإمارات"
+          }
+        }
+      }
+    },
     "Example: %@" : {
       "localizations" : {
         "ar" : {
@@ -340,6 +360,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "موقع GitHub"
+          }
+        }
+      }
+    },
+    "greet" : {
+      "comment" : "etiquette",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حسن الضيافة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hospitality"
           }
         }
       }
@@ -477,7 +514,31 @@
       }
     },
     "How it's played:" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "طريقة اللعب:"
+          }
+        }
+      }
+    },
+    "howgreet" : {
+      "comment" : "etiquette",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يعد الكرم وحسن الضيافة من العادات والتقاليد المرتبطة بالعرب، إذ يُعدّ استقبال الضيف من مبادئ السنع الإماراتي التي تعد جزءًا من الثقافة الأصيلة والمتجذرة في هذه الدولة، كما أنّها تُعلّم الإنسان الإماراتي طرق حسن الضيافة، والتي تبدأ بحسن تقديم القهوة العربية التي تُعدّ تراثًا قائمًا بحد ذاته، حيث يُستقبل الضيف بالقهوة العربية المُحضّرة مسبقًا متبوعةً بعبارات الترحيب والتأهيل؛ الأمر الذي يُعطي جوًا من السعادة والبهجة، وانتهاءً بدعوته على الطعام؛ فالشعب الإماراتي معروف عنه بأنّه شعب كريم ومضياف."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generosity and hospitality are among the customs and traditions associated with Arabs. Hosting guests is one of the fundamental principles of etiquette, which is an integral part of the nation’s deep-rooted culture. It teaches Emiratis the art of hospitality, beginning with the proper serving of Arabic coffee—a tradition in its own right. Guests are welcomed with pre-prepared Arabic coffee, accompanied by warm greetings and expressions of welcome, creating an atmosphere of joy and cheer. The hospitality is then completed by inviting the guest to a meal, as Emiratis are well known for their generosity and hospitality."
+          }
+        }
+      }
     },
     "hvillquest1" : {
       "comment" : "quest",
@@ -1193,7 +1254,14 @@
       }
     },
     "Traditional Games" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الألعاب الشعبية"
+          }
+        }
+      }
     },
     "Version: %@" : {
       "localizations" : {

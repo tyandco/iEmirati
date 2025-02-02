@@ -35,7 +35,12 @@ struct TraditionalGame: Identifiable {
     let howToplay: String
     let description: String
 }
-
+struct EtiquettePractice: Identifiable {
+    let id = UUID()
+    let name: String
+    let howitworks: String
+    let imageName: String
+}
 // Sample word list
 let words: [WordOfTheDay] = [
     WordOfTheDay(word: NSLocalizedString("Arqoub", comment: "wordoftheday"), meaning: NSLocalizedString("Arqoub Meaning", comment: "wordoftheday"), example: NSLocalizedString("Arqoub Example", comment: "wordoftheday"), imageName: "arqoubimage"),
@@ -50,6 +55,9 @@ let traditionalGames: [TraditionalGame] = [
     TraditionalGame(name: NSLocalizedString("teela", comment: "traditional game"), image: "teela", howToplay: NSLocalizedString("teelarules", comment: "how to play") , description: NSLocalizedString("teeladesc", comment: "traditional game desc")),
     TraditionalGame(name: NSLocalizedString("aldissais", comment: "traditional game"), image: "aldissais", howToplay: NSLocalizedString("aldissaisrules", comment: "how to play") , description: NSLocalizedString("aldissaisdesc", comment: "traditional game desc")),
     TraditionalGame(name: NSLocalizedString("khobzrigag", comment: "traditional game"), image: "khobzrigag", howToplay: NSLocalizedString("khobzrigaghowtoplay", comment: "how to play") , description: NSLocalizedString("khobzrigagdesc", comment: "traditional game desc")),
+]
+let etiquette: [EtiquettePractice] = [
+    EtiquettePractice(name: NSLocalizedString("greet", comment: "etiquette"), howitworks: NSLocalizedString("howgreet", comment: "etiquette"), imageName: "greeting")
 ]
 // This function picks a word based on the date
 func fetchWordOfTheDay() -> WordOfTheDay {
@@ -103,6 +111,7 @@ struct HomeScreen: View {
     ]
     let foods: [FoodItem] = traditionalFoods
     let games: [TraditionalGame] = traditionalGames
+    let etiquett: [EtiquettePractice] = etiquette
     var wordOfTheDay: WordOfTheDay {
         fetchWordOfTheDay()
     }
@@ -164,6 +173,21 @@ struct HomeScreen: View {
                                             .padding(.horizontal)
                                         }
                                         .frame(height: 200)
+                    Text("Etiquette in the UAE")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding(.all)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 15) {
+                            ForEach(etiquett) { etiquette in
+                                NavigationLink(destination: EtiquetteDetailView(etiquette: etiquette)){
+                                    EtiquetteCardView(etiquette: etiquette)
+                                }
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    .frame(height: 200)
                 }
                 .navigationTitle("Home")
                 .padding()
@@ -210,7 +234,7 @@ struct HomeScreen: View {
                 Image(food.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 150, height: 100)
+                    .frame(width: 175, height: 100)
                     .clipped()
                     .cornerRadius(10)
 
@@ -223,7 +247,7 @@ struct HomeScreen: View {
                     .foregroundColor(.secondary)
                     .lineLimit(2)
             }
-            .frame(width: 150)
+            .frame(width: 175)
             .padding(.vertical)
             .cornerRadius(15)
         }
@@ -273,7 +297,7 @@ struct HomeScreen: View {
                 Image(location.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 150, height: 100)
+                    .frame(width: 200, height: 100)
                     .clipped()
                     .cornerRadius(10)
 
@@ -287,7 +311,7 @@ struct HomeScreen: View {
                     .lineLimit(2)
                 .padding(.top,1)
             }
-            .frame(width: 150)
+            .frame(width: 200)
             .padding(.vertical)
             .cornerRadius(15)
         }
@@ -474,6 +498,71 @@ struct HomeScreen: View {
             }
             .padding()
             .navigationTitle("Traditional Games")
+        }
+    }
+    struct EtiquetteCardView: View {
+        let etiquette: EtiquettePractice
+        var body: some View {
+            VStack(alignment: .leading) {
+                Image(etiquette.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 200, height: 125, alignment: .center)
+                    .clipped()
+                    .cornerRadius(10)
+
+                Text(etiquette.name)
+                    .font(.headline)
+                    .padding(.top, 5)
+
+                Text("Tap to learn more!")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .lineLimit(2)
+            }
+            .frame(width: 200)
+            .padding(.vertical)
+            .cornerRadius(15)
+        }
+    }
+    struct EtiquetteDetailView: View {
+        let etiquette: EtiquettePractice
+        
+        var body: some View {
+            ScrollView{
+                VStack {
+                    ZStack {
+                        // Blurred frame
+                        Image(etiquette.imageName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width:300,height: 200)
+                            .blur(radius: 10)
+                            .opacity(1)
+                            .padding()
+                        // Main image
+                        Image(etiquette.imageName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width:300,height: 200)
+                            .cornerRadius(30)
+                    }
+                    .padding()
+                    Text(etiquette.name)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .padding(.top, 10)
+                    
+                    Text(etiquette.howitworks)
+                        .multilineTextAlignment(.center)
+                        .font(.body)
+                        .padding(.top, 10)
+                    
+                    Spacer()
+                }
+            }
+            .padding()
+            .navigationTitle("Etiquette")
         }
     }
     struct WordOfTheDayView: View {
