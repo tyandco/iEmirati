@@ -17,6 +17,8 @@ The features included are:
 - Explore Locations (a list of locations to visit, with Apple Maps and Google Maps support!)
 - Things to do (each location comes with a list of activities)
 - Foods to try (it's in the name)
+- Traditional Games (added since v1.0.1, shows you a list of traditional games, along with a description, and how each game is played)
+- Values of the UAE (also added since v1.0.1, shows you the values of the UAE, such as tolerance, hospitality, etc.)
 ## Testflight
 iEmirati is on TestFlight!
 <img src="iEmirati/iEmirati/Assets.xcassets/iCloud.imageset/testflight.png">
