@@ -57,7 +57,10 @@ let traditionalGames: [TraditionalGame] = [
     TraditionalGame(name: NSLocalizedString("khobzrigag", comment: "traditional game"), image: "khobzrigag", howToplay: NSLocalizedString("khobzrigaghowtoplay", comment: "how to play") , description: NSLocalizedString("khobzrigagdesc", comment: "traditional game desc")),
 ]
 let etiquette: [EtiquettePractice] = [
-    EtiquettePractice(name: NSLocalizedString("greet", comment: "etiquette"), howitworks: NSLocalizedString("howgreet", comment: "etiquette"), imageName: "greeting")
+    EtiquettePractice(name: NSLocalizedString("hospitality", comment: "etiquette"), howitworks: NSLocalizedString("hospitalitydesc", comment: "etiquette"), imageName: "greeting"),
+    EtiquettePractice(name: NSLocalizedString("chivalry", comment: "etiquette"), howitworks: NSLocalizedString("chivalrydesc", comment: "etiquette"), imageName: "chivalry"),
+    EtiquettePractice(name: NSLocalizedString("tolerance", comment: "etiquette"), howitworks: NSLocalizedString("tolerancedesc", comment: "etiquette"), imageName: "tolerance"),
+    EtiquettePractice(name: NSLocalizedString("sincerity", comment: "etiquette"), howitworks: NSLocalizedString("sinceritydesc", comment: "etiquette"), imageName: "sincerity")
 ]
 // This function picks a word based on the date
 func fetchWordOfTheDay() -> WordOfTheDay {
@@ -107,7 +110,15 @@ struct HomeScreen: View {
                  coordinate: CLLocationCoordinate2D(latitude: 24.5451874, longitude: 54.4828312),
                  activities: [
                     Activity(name: NSLocalizedString("jubailquest1", comment: "quest")),
-                    Activity(name: NSLocalizedString("jubailquest2", comment: "quest")),])
+                    Activity(name: NSLocalizedString("jubailquest2", comment: "quest")),]),
+        Location(name: NSLocalizedString("exp2020", comment: "location"),
+                 imageName: "expo",
+                 description: NSLocalizedString("exp2020desc", comment: "location"),
+                 coordinate: CLLocationCoordinate2D(latitude: 24.9648114, longitude: 55.151772),
+                 activities: [
+                    Activity(name: NSLocalizedString("expoquest1", comment: "quest")),
+                    Activity(name: NSLocalizedString("expoquest2", comment: "quest"))
+                 ])
     ]
     let foods: [FoodItem] = traditionalFoods
     let games: [TraditionalGame] = traditionalGames
@@ -173,7 +184,7 @@ struct HomeScreen: View {
                                             .padding(.horizontal)
                                         }
                                         .frame(height: 200)
-                    Text("Etiquette in the UAE")
+                    Text("Values of the UAE")
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding(.all)
@@ -252,6 +263,7 @@ struct HomeScreen: View {
             .cornerRadius(15)
         }
     }
+
     struct FoodDetailView: View {
         let food: FoodItem
         
@@ -344,6 +356,7 @@ struct HomeScreen: View {
                     Text(location.description)
                         .font(.body)
                         .padding()
+                        .multilineTextAlignment(.center)
                     // Things To Do
                     VStack{
                         Text("Things to do:")
@@ -510,10 +523,10 @@ struct HomeScreen: View {
                     .frame(width: 200, height: 125, alignment: .center)
                     .clipped()
                     .cornerRadius(10)
+                    .padding(.bottom)
 
                 Text(etiquette.name)
                     .font(.headline)
-                    .padding(.top, 5)
 
                 Text("Tap to learn more!")
                     .font(.subheadline)
@@ -552,6 +565,7 @@ struct HomeScreen: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .padding(.top, 10)
+                        .multilineTextAlignment(.center)
                     
                     Text(etiquette.howitworks)
                         .multilineTextAlignment(.center)
@@ -562,7 +576,7 @@ struct HomeScreen: View {
                 }
             }
             .padding()
-            .navigationTitle("Etiquette")
+            .navigationTitle("Values")
         }
     }
     struct WordOfTheDayView: View {

@@ -218,6 +218,40 @@
         }
       }
     },
+    "chivalry" : {
+      "comment" : "etiquette",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المروءة والشهامة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chivalry and Integrity"
+          }
+        }
+      }
+    },
+    "chivalrydesc" : {
+      "comment" : "etiquette",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "وثيقًا، فمن يتمتع بإحدى هذه المبادئ تتولد لديه باقي المبادئ تلقائيًّا، والمروءة والشهامة تزيدان من الترابط الاجتماعي والتعاون المجتمعي في الإمارات، والتي تدفع الناس بدورها لمساعدة الغير تلقائيًا دون أي تفكير، وهي ترتبط ارتباطًا وثيقًا بالكرم والفزعة، إضافة إلى أنّها تُعلّم العديد من مبادئ احترام المرأة أيًّا كان عمرها ومظهرها."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The principles of chivalry and integrity in Emirati San‘ are closely linked to other values. A person who embodies one of these principles naturally develops the others as well. Chivalry and integrity strengthen social bonds and foster community cooperation in the UAE, encouraging people to help others instinctively without hesitation. These values are deeply connected to generosity and solidarity, and they also teach essential principles of respecting women, regardless of their age or appearance."
+          }
+        }
+      }
+    },
     "Credits" : {
       "localizations" : {
         "ar" : {
@@ -246,26 +280,6 @@
         }
       }
     },
-    "Etiquette" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "السنع"
-          }
-        }
-      }
-    },
-    "Etiquette in the UAE" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "السنع في الإمارات"
-          }
-        }
-      }
-    },
     "Example: %@" : {
       "localizations" : {
         "ar" : {
@@ -282,6 +296,40 @@
         }
       }
     },
+    "exp2020" : {
+      "comment" : "location",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مدينة إكسبو دبي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expo City Dubai"
+          }
+        }
+      }
+    },
+    "exp2020desc" : {
+      "comment" : "location",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عُرف في الأصل باسم إكسبو 2020 دبي. كان إكسبو 2020 دبي معرضًا عالميًا أقيم من 1 أكتوبر 2021 إلى 31 مارس 2022 في دبي الجنوب، بالقرب من مطار آل مكتوم الدولي. بُني بين 2016 و2019 على مساحة 4.38 كيلومتر مربع، وضم 192 جناحًا. تميز مركزه، ساحة الوصل، بقبة ذهبية شبكية بعرض 67.5 مترًا، مستوحاة من جذور شجرة الغاف، وكانت أكبر شاشة عرض بزاوية 360 درجة في العالم. يُعرف الآن باسم مدينة إكسبو دبي، ولا يزال مركزًا للابتكار والثقافة."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Originally known as Expo 2020 Dubai. Expo 2020 Dubai was a world exposition held from October 1, 2021, to March 31, 2022, in Dubai South, near Al Maktoum International Airport. Built between 2016 and 2019, it covered 4.38 sq km and featured 192 pavilions. Its centerpiece, Al Wasl Plaza, housed a 67.5-meter-wide gold trellis dome, inspired by the Ghaf tree’s roots, serving as the world’s largest 360-degree projection screen. Now known as Expo City Dubai, it remains a hub for innovation and culture."
+          }
+        }
+      }
+    },
     "Explore Locations" : {
       "localizations" : {
         "ar" : {
@@ -294,6 +342,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Explore Locations"
+          }
+        }
+      }
+    },
+    "expoquest1" : {
+      "comment" : "quest",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اكتشف قلب مدينة إكسبو، ساحة الوصل"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explore the heart of Expo City, Al Wasl Plaza"
+          }
+        }
+      }
+    },
+    "expoquest2" : {
+      "comment" : "quest",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تفقد جناح الإمارات (إذا كان موجودًا)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check out the UAE Pavilion (if it’s still there)"
           }
         }
       }
@@ -364,23 +446,6 @@
         }
       }
     },
-    "greet" : {
-      "comment" : "etiquette",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "حسن الضيافة"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hospitality"
-          }
-        }
-      }
-    },
     "Harees" : {
       "comment" : "traditional food",
       "localizations" : {
@@ -388,6 +453,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "هريس"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Harees (هريس)"
           }
         }
       }
@@ -513,17 +584,24 @@
         }
       }
     },
-    "How it's played:" : {
+    "hospitality" : {
+      "comment" : "etiquette",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "طريقة اللعب:"
+            "value" : "حسن الضيافة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hospitality"
           }
         }
       }
     },
-    "howgreet" : {
+    "hospitalitydesc" : {
       "comment" : "etiquette",
       "localizations" : {
         "ar" : {
@@ -536,6 +614,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Generosity and hospitality are among the customs and traditions associated with Arabs. Hosting guests is one of the fundamental principles of etiquette, which is an integral part of the nation’s deep-rooted culture. It teaches Emiratis the art of hospitality, beginning with the proper serving of Arabic coffee—a tradition in its own right. Guests are welcomed with pre-prepared Arabic coffee, accompanied by warm greetings and expressions of welcome, creating an atmosphere of joy and cheer. The hospitality is then completed by inviting the guest to a meal, as Emiratis are well known for their generosity and hospitality."
+          }
+        }
+      }
+    },
+    "How it's played:" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "طريقة اللعب:"
           }
         }
       }
@@ -805,6 +893,12 @@
             "state" : "translated",
             "value" : "لقيمات"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luqaimat (لقيمات)"
+          }
         }
       }
     },
@@ -832,6 +926,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "مجبوس"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Machboos (مجبوس)"
           }
         }
       }
@@ -998,6 +1098,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "سعيد ياسر"
+          }
+        }
+      }
+    },
+    "sincerity" : {
+      "comment" : "etiquette",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الإخلاص والأمانة والصدق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loyalty, Honesty, and Truthfulness"
+          }
+        }
+      }
+    },
+    "sinceritydesc" : {
+      "comment" : "etiquette",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تنحدر لدى من لديه السنع الإماراتي عدّة صفات حميدة، منها: الإخلاص، ويشمل ذلك الإخلاص في جميع شؤون الحياة؛ كالإخلاص في العمل، والإخلاص للعائلة والأصدقاء وغيرها، إلى جانب الأمانة والصدق، وقد أُضيف هذا المبدأ إلى السنع الإماراتي ليكون مبدأً يجب على الإماراتي التحلّي به في محبّة وطنه، والدفاع الصادق عنه، والإخلاص في حبه، وحمايته بشجاعة وبأس."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One of the several noble qualities in the UAE include loyalty, which extends to all aspects of life—such as loyalty in work, to family, and to friends. This is alongside honesty and truthfulness. This principle has been incorporated into Emirati San‘ as a fundamental value that every Emirati should uphold in loving their homeland, defending it sincerely, and protecting it with courage and strength."
           }
         }
       }
@@ -1243,6 +1377,40 @@
         }
       }
     },
+    "tolerance" : {
+      "comment" : "etiquette",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التسامح"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tolerance"
+          }
+        }
+      }
+    },
+    "tolerancedesc" : {
+      "comment" : "etiquette",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يعلم السنع الإماراتي العديد من المبادئ أهمها التسامح واحترام الجميع بغض النظر عن لونه وجنسه وعرقه ودينه، وهو الأمر الذي يجب على جميع الناس التحلي به؛ نظرًا لأنّ دولة الإمارات تُعدّ بوابة تضم في داخلها العديد من الأعراق من مختلف أنحاء العالم، وهذا التسامح يعكس القيم المتجذرة والانفتاح الذي يتمثّل به أبناؤها، وللتسامح آثار عديدة تنعكس على الفرد والمجتمع، فهو يساعد على زيادة الترابط المجتمعي وينعكس على سلوكيات أفراده في الحياة اليومية."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The most significant value of the UAE is tolerance and respect for all people, regardless of their color, gender, race, or religion. This is a value that everyone should uphold, especially since the UAE serves as a gateway that brings together people of diverse backgrounds from all over the world. This tolerance reflects the nation’s deep-rooted values and openness, which are embodied by its people. Moreover, tolerance has numerous positive effects on both individuals and society, as it strengthens social cohesion and positively influences people’s behavior in their daily lives."
+          }
+        }
+      }
+    },
     "Traditional Foods" : {
       "localizations" : {
         "ar" : {
@@ -1259,6 +1427,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "الألعاب الشعبية"
+          }
+        }
+      }
+    },
+    "Values" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "السنع"
+          }
+        }
+      }
+    },
+    "Values of the UAE" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "السنع في الإمارات"
           }
         }
       }
