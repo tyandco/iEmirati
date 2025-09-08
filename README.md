@@ -5,10 +5,12 @@ An app that resembles the heritage and culture of the UAE.
 
 
 ## What is it?
-iEmirati is actually a project made for the <a href="https://iosdesign.ae/">iOS Design Challenge.
+iEmirati is actually a project made for the <a href="https://iosdesign.ae/">iOS Design Challenge 2024-25.
 <img src="https://framerusercontent.com/images/f8CxEVevDLwXgXtOhOIr47dsg6E.png" align="center">
 
 The concept app was first made in Keynote, then rebuilt in Xcode.
+
+Sadly though, we lost. We really tried, but we'll do it next year hopefully.
 
 ## Features
 iEmirati has a few features that may be small, yet very interesting.
